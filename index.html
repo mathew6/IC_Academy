@@ -3,10 +3,11 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
     </script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
     <title>IC Academy</title>
 </head>
 <body>
-    <script src="index.js"></script>
     <div ng-app="topicList" ng-controller="myCtrl">
         <ul>
             <li ng-repeat="topic in temp_topics"><a target="_blank" ng-href = "{{topic.link}}">{{topic.name}}</a></li>
@@ -27,32 +28,5 @@
     <a target="_blank" href="https://en.wikipedia.org/wiki/Orbital_mechanics">
         Click here
     </a>
-    <script>
-        var app = angular.module("topicList", []); 
-        app.controller("myCtrl", function($scope) {
-            $scope.topics = [
-                    {name:"Rockets", link:"https://en.wikipedia.org/wiki/Rocket" },
-                    {name:"Satellite", link:"https://en.wikipedia.org/wiki/Satellite" }, 
-                    {name:"Kepler", link: "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"}
-                ];
-            $scope.temp_topics = $scope.topics;
-                $scope.searchTopic = function(){
-                    var ctr = 0;
-                    for (var i = 0; i < $scope.topics.length; i++){
-                        if ($scope.topics[i].name == $scope.searchMe){
-                            $scope.temp_topics = [$scope.topics[i]];
-                            console.log($scope.temp_topics);
-                            ctr++;
-                        }    
-                    } 
-                    if (!ctr) {
-                        $scope.temp_topics = $scope.topics;
-                    }
-                }
-        });
-</script>
-
-
 </body>
-
 </html>
