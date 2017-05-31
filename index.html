@@ -9,6 +9,11 @@
 </head>
 <body>
     <div ng-app="topicList" ng-controller="myCtrl">
+        <ul id="nav-bar-ul">
+            <li class="nav-bar-li"><a class="active" href="#home">Home</a></li>
+            <li class="nav-bar-li"><a href="#topics">Topics</a></li>
+            <li class="nav-bar-li"><a href="#about">About</a></li>
+        </ul>
         <ul>
             <li ng-repeat="topic in temp_topics"><a target="_blank" ng-href = "{{topic.link}}">{{topic.name}}</a></li>
         </ul>

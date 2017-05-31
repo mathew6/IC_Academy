@@ -13,8 +13,8 @@ app.controller("myCtrl", function($scope) {
                 $scope.temp_topics = [$scope.topics[i]];
                 console.log($scope.temp_topics);
                 ctr++;
-            }    
-        } 
+            }
+        }
         if (!ctr) {
             $scope.temp_topics = $scope.topics;
         }
