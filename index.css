@@ -1,3 +1,4 @@
+/* Nav bar */
 #nav-bar-ul {
     list-style-type: none;
     margin: 0;
@@ -24,4 +25,18 @@
 
 .nav-bar-li a:active {
     background-color: black;
+}
+
+ /* Videos */ 
+iframe {
+    /* center the youtube video */
+    display: block;
+    margin: auto; 
+    /* set size */
+    width: 560px;
+    height: 315px;
+}
+
+.video {
+    margin-top: 50px;
 }
