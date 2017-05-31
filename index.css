@@ -29,8 +29,12 @@
 
  /* Videos */ 
 iframe {
+    /* center the youtube video */
     display: block;
     margin: auto; 
+    /* set size */
+    width: 560px;
+    height: 315px;
 }
 
 .video {
