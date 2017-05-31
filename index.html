@@ -20,6 +20,7 @@
             <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('About')">About</a></li>
         </ul>
 
+        <!-- Home page html content -->
         <div ng-if="header_ctrl.tabName == 'Home'">
             <h1 id="header1" align="center">IC Academy</h1>
             <h2>Lessons</h2>
@@ -28,6 +29,7 @@
             </a>
         </div>
 
+        <!-- Topics page html content -->
         <div ng-if="header_ctrl.tabName == 'Topics'" ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
             <h1 id="header1" align="center">Topics</h1>
             <md-content class="md-padding">
@@ -56,6 +58,7 @@
             </md-content>
         </div>
         
+        <!-- Videos page html content -->
         <div ng-if="header_ctrl.tabName == 'Videos'">
             <h1 align="center">Orbital Videos</h1>
                 <div class="video">
@@ -78,6 +81,7 @@
                 </div>
         </div>
 
+        <!-- About page html content -->
         <div ng-if="header_ctrl.tabName == 'About'">
             <h1 align="center">About</h1>
             <p>

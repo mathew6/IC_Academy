@@ -2,17 +2,18 @@ var app = angular.module('firstApplication', ['ngMaterial']);
 app.controller('headerController', headerController);
 app.controller('autoCompleteController', autoCompleteController);
 
+        // header controller for nav bar functionality
         function headerController ($log) {
             var self = this;
             self.tabName = 'Home'; // set default tabName to "Home"
-            //alter tab name in order to switch to request tab
+            //alter tab name in order to switch to requested tab
            self.changeTab = function(tabName) {
                $log.info("tab name changed to: " + tabName);
                return self.tabName = tabName;
            }
-           
         }
 
+        // auto complete controlelr for search bar functionality
         function autoCompleteController ($scope, $timeout, $q, $log) {
            var self = this;
            self.simulateQuery = false;
@@ -25,7 +26,8 @@ app.controller('autoCompleteController', autoCompleteController);
            self.newState = newState;
            function newState(state) {
               alert("This functionality is yet to be implemented!");
-           }    
+           }
+           // search for topic searched by user
            function querySearch (query) {
               var results = query ? self.topics.filter( createFilterFor(query) ) : self.topics, deferred;
               if (self.simulateQuery) {
@@ -42,15 +44,16 @@ app.controller('autoCompleteController', autoCompleteController);
            function searchTextChange(text) {
               $log.info('Text changed to ' + text);
            }
+           // when a topic is chosen, open its informational page
            function selectedItemChange(item) {
               $log.info('Item changed to ' + JSON.stringify(item));
               if (item) {
-                var topic = item['display'];
-                var result = topic.link($scope.topics[topic]);
-                window.open($scope.topics[topic]);
+                  var topic = item['display'];
+                  var result = topic.link($scope.topics[topic]);
+                  window.open($scope.topics[topic]);
               }
            }
-
+           // load space topics
            function loadTopics() {
               var allTopics = "Rocket, Satellite, Kepler";
               $scope.topics = {"Rocket" : "https://en.wikipedia.org/wiki/Rocket",
