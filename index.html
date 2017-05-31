@@ -8,13 +8,6 @@
     <title>IC Academy</title>
 </head>
 <body>
-    <div ng-app="topicList" ng-controller="myCtrl">
-        <ul>
-            <li ng-repeat="topic in temp_topics"><a target="_blank" ng-href = "{{topic.link}}">{{topic.name}}</a></li>
-        </ul>
-        <input ng-model="searchMe">
-        <button ng-click="searchTopic()">Search</button>
-    </div>
     <h1 id="header1">IC Academy</h1>
     <p>This website will be used to help 
         train future employees on oribtal physics
@@ -28,5 +21,26 @@
     <a target="_blank" href="https://en.wikipedia.org/wiki/Orbital_mechanics">
         Click here
     </a>
+
+    <div ng-app="topicList" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="topic in temp_topics"><a target="_blank" ng-href = "{{topic.link}}">{{topic.name}}</a></li>
+        </ul>
+        <input ng-model="searchMe">
+        <button ng-click="searchTopic()">Search</button>
+    </div>
+
+    <md-autocomplete 
+    md-selected-item="searchMe" 
+    md-search-text="searchText" 
+    md-items="topic in getMatches(searchText)" 
+    md-item-text="item.display">
+        <md-item-template>
+            <span md-highlight-text="searchText">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+            No matches found.
+        </md-not-found>
+    </md-autocomplete>
 </body>
 </html>
