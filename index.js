@@ -1,6 +1,17 @@
-angular
-           .module('firstApplication', ['ngMaterial'])
-           .controller('autoCompleteController', autoCompleteController);
+var app = angular.module('firstApplication', ['ngMaterial']);
+app.controller('headerController', headerController);
+app.controller('autoCompleteController', autoCompleteController);
+
+        function headerController ($log) {
+            var self = this;
+            self.tabName = 'Home'; // set default tabName to "Home"
+            //alter tab name in order to switch to request tab
+           self.changeTab = function(tabName) {
+               $log.info("tab name changed to: " + tabName);
+               return self.tabName = tabName;
+           }
+           
+        }
 
         function autoCompleteController ($scope, $timeout, $q, $log) {
            var self = this;

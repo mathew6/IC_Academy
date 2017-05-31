@@ -12,13 +12,25 @@
     <title>IC Academy</title>
 </head>
 <body ng-app="firstApplication" ng-cloak>
-    <ul id="nav-bar-ul">
-        <li class="nav-bar-li"><a class="active" href="/">Home</a></li>
-        <li class="nav-bar-li"><a href="#topics">Topics</a></li>
-        <li class="nav-bar-li"><a href="videos.html">Videos</a></li>
-        <li class="nav-bar-li"><a href="#about">About</a></li>
-    </ul>
-    <div ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
+    <div ng-controller="headerController as header_ctrl">
+        <ul id="nav-bar-ul">
+            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Home')">Home</a></li>
+            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Topics')">Topics</a></li>
+            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Videos')">Videos</a></li>
+            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('About')">About</a></li>
+        </ul>
+
+        <div ng-if="header_ctrl.tabName == 'Home'">
+            <h1 id="header1">IC Academy</h1>
+            <p>
+            This is a quick 101 intro to Orbital Mechanics
+            </p>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/Orbital_mechanics">
+                Click here
+            </a>
+        </div>
+
+        <div ng-if="header_ctrl.tabName == 'Topics'" ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
             <md-content class="md-padding">
             <form ng-submit="$event.preventDefault()">
                 <md-autocomplete
@@ -45,18 +57,27 @@
             </md-content>
         </div>
         
-        <h1 id="header1">IC Academy</h1>
-        <p>This website will be used to help 
-            train future employees on oribtal physics.
-        </p>
-        <img src="https://www.nitt.edu/home/academics/departments/physics/Faculty/lecturers/justin/students/magnetic/origin/origin.gif">
-        </img>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VGcQhgkXPx0?ecver=1" frameborder="0" allowfullscreen></iframe>"
-        <p>
-        This is a quick 101 intro to Orbital Mechanics
-        </p>
-        <a target="_blank" href="https://en.wikipedia.org/wiki/Orbital_mechanics">
-            Click here
-        </a>
+        <div ng-if="header_ctrl.tabName == 'Videos'">
+            <h1 align="center">Orbital Videos</h1>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/VGcQhgkXPx0?ecver=1" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/tJiAkBxuqfs" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/Am7EwmxBAW8" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
