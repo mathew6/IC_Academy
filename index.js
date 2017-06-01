@@ -24,6 +24,11 @@ app.controller('autoCompleteController', autoCompleteController);
            self.selectedItemChange = selectedItemChange;
            self.searchTextChange   = searchTextChange;
            self.newState = newState;
+           self.topicLinkObj = {"Rocket" : "https://en.wikipedia.org/wiki/Rocket",
+                            "Satellite" : "https://en.wikipedia.org/wiki/Satellite", 
+                            "Kepler" : "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"};
+           addTopicsToTab();
+
            function newState(state) {
               alert("This functionality is yet to be implemented!");
            }
@@ -48,17 +53,13 @@ app.controller('autoCompleteController', autoCompleteController);
            function selectedItemChange(item) {
               $log.info('Item changed to ' + JSON.stringify(item));
               if (item) {
-                  var topic = item['display'];
-                  var result = topic.link($scope.topics[topic]);
-                  window.open($scope.topics[topic]);
+                var topic = item['display'];
+                window.open(self.topicLinkObj[topic]);
               }
            }
            // load space topics
            function loadTopics() {
               var allTopics = "Rocket, Satellite, Kepler";
-              $scope.topics = {"Rocket" : "https://en.wikipedia.org/wiki/Rocket",
-                               "Satellite" : "https://en.wikipedia.org/wiki/Satellite", 
-                               "Kepler" : "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"};
               return allTopics.split(/, +/g).map( function (topic) {
                  return {
                     value: topic.toLowerCase(),
@@ -73,4 +74,12 @@ app.controller('autoCompleteController', autoCompleteController);
                  return (state.value.indexOf(lowercaseQuery) === 0);
               };
            }
+           function addTopicsToTab()        {
+               $log.info("addTopicsToTab was called");
+               for (var key in self.topicLinkObj) {                 
+                   var topic_link = key.link(self.topicLinkObj[key]);
+                   document.getElementById("listOfTopics").innerHTML +="<li>" + topic_link + "</li>";
+                }
+            }
         } 
+        
