@@ -22,16 +22,14 @@
 
         <!-- Home page html content -->
         <div ng-if="header_ctrl.tabName == 'Home'">
-            <h1 id="header1" align="center">IC Academy</h1>
-            <h2>Lessons</h2>
-            <p><a target="_blank" href="https://en.wikipedia.org/wiki/Orbital_mechanics">
-                Orbital Mechanics 101
-            </a></p>
+            <h1 id="header1"><strong>IC Academy</strong></h1>
+            <img id="home-image" src="http://cdn.wallpapersafari.com/71/5/ANst2W.jpg">
+            <h2>Invent the Future.</h2>
         </div>
 
         <!-- Topics page html content -->
         <div ng-if="header_ctrl.tabName == 'Topics'" ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
-            <h1 id="header1" align="center">Topics</h1>
+            <h1 id="header1"><strong>Topics</strong></h1>
             <md-content class="md-padding">
             <form ng-submit="$event.preventDefault()">
                 <md-autocomplete
@@ -61,7 +59,7 @@
         
         <!-- Videos page html content -->
         <div ng-if="header_ctrl.tabName == 'Videos'">
-            <h1 align="center">Orbital Videos</h1>
+            <h1 id="header1"><strong>Orbital Videos</strong></h1>
                 <div class="video">
                     <iframe src="https://www.youtube.com/embed/VGcQhgkXPx0?ecver=1" 
                             frameborder="0" 
@@ -84,7 +82,7 @@
 
         <!-- About page html content -->
         <div ng-if="header_ctrl.tabName == 'About'">
-            <h1 align="center">About</h1>
+            <h1 id="header1"><strong>About</strong></h1>
             <p>
                The purpose of the Intelligence Community (IC) Academy is to
                teach prospective employees about important space and orbital
