@@ -1,3 +1,17 @@
+h1 {
+    font: 40px "Helvetica Neue", Arial, Helvetica;
+}
+
+h2 {
+    font: 28px "Helvetica Neue", Arial, Helvetica;
+    margin: 20px;
+}
+
+p {
+    font: 14px "Helvetica Neue", Arial, Helvetica;
+    margin: 20px;
+}
+
 /* Nav bar */
 #nav-bar-ul {
     list-style-type: none;
