@@ -1,4 +1,5 @@
 var app = angular.module('firstApplication', ['ngMaterial', 'ngRoute']);
+
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider
     .when('/', {
