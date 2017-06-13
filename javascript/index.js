@@ -7,7 +7,6 @@ app.config(['$routeProvider', function($routeProvider){
     })
     .when('/topics', {
         templateUrl: 'templates/pages/topics/index.html',
-        controller: 'autoCompleteController'
     })
     .when('/videos', {
         templateUrl: 'templates/pages/videos/index.html'

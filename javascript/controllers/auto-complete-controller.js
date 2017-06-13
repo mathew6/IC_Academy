@@ -13,7 +13,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            self.topicLinkObj = {"Rocket" : "https://en.wikipedia.org/wiki/Rocket",
                             "Satellite" : "https://en.wikipedia.org/wiki/Satellite", 
                             "Kepler" : "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"};
-        //    addTopicsToTab();
+           addTopicsToTab();
 
            // search for topic searched by user
            function querySearch (query) {
