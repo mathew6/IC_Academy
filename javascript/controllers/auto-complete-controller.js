@@ -5,20 +5,16 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            var self = this;
            self.simulateQuery = false;
            self.isDisabled    = false;
-           // list of states to be displayed
+           // list of topics to be displayed
            self.topics        = loadTopics();
            self.querySearch   = querySearch;
            self.selectedItemChange = selectedItemChange;
            self.searchTextChange   = searchTextChange;
-           self.newState = newState;
            self.topicLinkObj = {"Rocket" : "https://en.wikipedia.org/wiki/Rocket",
                             "Satellite" : "https://en.wikipedia.org/wiki/Satellite", 
                             "Kepler" : "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion"};
-           addTopicsToTab();
+        //    addTopicsToTab();
 
-           function newState(state) {
-              alert("This functionality is yet to be implemented!");
-           }
            // search for topic searched by user
            function querySearch (query) {
               var results = query ? self.topics.filter( createFilterFor(query) ) : self.topics, deferred;
@@ -57,8 +53,8 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            //filter function for search query
            function createFilterFor(query) {
               var lowercaseQuery = angular.lowercase(query);
-              return function filterFn(state) {
-                 return (state.value.indexOf(lowercaseQuery) === 0);
+              return function filterFn(topic) {
+                 return (topic.value.indexOf(lowercaseQuery) === 0);
               };
            }
            function addTopicsToTab()        {
