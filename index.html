@@ -1,94 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="javascript/index.js"></script>
     <title>IC Academy</title>
 </head>
-<body ng-app="firstApplication" ng-cloak>
-    <div ng-controller="headerController as header_ctrl">
+<body ng-app="firstApplication">
+    <div>
         <ul id="nav-bar-ul">
-            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Home')">Home</a></li>
-            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Topics')">Topics</a></li>
-            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('Videos')">Videos</a></li>
-            <li class="nav-bar-li"><a ng-click="header_ctrl.changeTab('About')">About</a></li>
+            <li class="nav-bar-li"><a href="#/home">Home</a></li>
+            <li class="nav-bar-li"><a href="#/topics">Topics</a></li>
+            <li class="nav-bar-li"><a href="#/videos">Videos</a></li>
+            <li class="nav-bar-li"><a href="#/about">About</a></li>
         </ul>
 
-        <!-- Home page html content -->
-        <div ng-if="header_ctrl.tabName == 'Home'">
-            <h1 id="header1"><strong>IC Academy</strong></h1>
-            <img id="home-image" src="http://cdn.wallpapersafari.com/71/5/ANst2W.jpg">
-            <h3>Invent the Future.</h3>
-        </div>
+        <div ng-view></div>
 
-        <!-- Topics page html content -->
-        <div ng-if="header_ctrl.tabName == 'Topics'" ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
-            <h1 id="header1"><strong>Topics</strong></h1>
-            <md-content class="md-padding">
-            <form ng-submit="$event.preventDefault()">
-                <md-autocomplete
-                    ng-disabled="ctrl.isDisabled"
-                    md-no-cache="ctrl.noCache"
-                    md-selected-item="ctrl.selectedItem"
-                    md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-                    md-search-text="ctrl.searchText"
-                    md-selected-item-change="ctrl.selectedItemChange(item)"
-                    md-items="item in ctrl.querySearch(ctrl.searchText)"
-                    md-item-text="item.display"
-                    md-min-length="0"
-                    placeholder="Search topic">
-                    <md-item-template>
-                        <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-                    </md-item-template>
-                    <md-not-found>
-                        No states matching "{{ctrl.searchText}}" were found.
-                        <a ng-click="ctrl.newState(ctrl.searchText)"></a>
-                    </md-not-found>
-                </md-autocomplete>
-                <br/>
-            </form>
-            </md-content>
-            <ul id="listOfTopics"></ul>
-        </div>
-        
-        <!-- Videos page html content -->
-        <div ng-if="header_ctrl.tabName == 'Videos'">
-            <h1 id="header1"><strong>Orbital Videos</strong></h1>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/VGcQhgkXPx0?ecver=1" 
-                            frameborder="0" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/tJiAkBxuqfs" 
-                            frameborder="0" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/Am7EwmxBAW8" 
-                            frameborder="0" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-        </div>
-
-        <!-- About page html content -->
-        <div ng-if="header_ctrl.tabName == 'About'">
-            <h1 id="header1"><strong>About</strong></h1>
-            <p>
-               The purpose of the Intelligence Community (IC) Academy is to
-               teach prospective employees about important space and orbital
-               concepts.
-            </p>
-        </div>
 
     </div>
 </body>

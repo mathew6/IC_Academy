@@ -1,4 +1,4 @@
-app.controller('headerController', headerController);
+angular.module('firstApplication').controller('headerController', headerController);
         // header controller for nav bar functionality
         function headerController ($log) {
             var self = this;
@@ -8,4 +8,4 @@ app.controller('headerController', headerController);
                $log.info("tab name changed to: " + tabName);
                return self.tabName = tabName;
            }
-        }
+        };

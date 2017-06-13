@@ -1,4 +1,4 @@
-app.controller('autoCompleteController', autoCompleteController);
+angular.module('firstApplication').controller('autoCompleteController', autoCompleteController);
 
         // auto complete controlelr for search bar functionality
         function autoCompleteController ($scope, $timeout, $q, $log) {
@@ -68,4 +68,4 @@ app.controller('autoCompleteController', autoCompleteController);
                    document.getElementById("listOfTopics").innerHTML +="<li>" + topic_link + "</li>";
                 }
             }
-        } 
+        };
