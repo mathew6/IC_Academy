@@ -14,8 +14,8 @@ app.config(['$routeProvider', function($routeProvider){
     .when('/about', {
         templateUrl: 'templates/pages/about/index.html'
     })
-    .when('/topics/rocket',{
-        templateUrl: 'templates/pages/topics/rocket/index.html'
+    .when('/topics/orbital',{
+        templateUrl: 'templates/pages/topics/orbital/index.html'
     })
     .when('/topics/satellites',{
         templateUrl: 'templates/pages/topics/satellites/index.html'
