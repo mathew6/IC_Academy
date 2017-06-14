@@ -10,8 +10,8 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            self.querySearch   = querySearch;
            self.selectedItemChange = selectedItemChange;
            self.searchTextChange   = searchTextChange;
-           self.topicLinkObj = {"Rocket" : "#!/topics/rockets",
-                            "Satellite" : "#!/topics/satelites", 
+           self.topicLinkObj = {"Rocket" : "#!/topics/rocket",
+                            "Satellite" : "#!/topics/satellites", 
                             "Kepler" : "#!/topics/kepler"};
            addTopicsToTab();
 
@@ -37,7 +37,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
               $log.info('Item changed to ' + JSON.stringify(item));
               if (item) {
                 var topic = item['display'];
-                window.open(self.topicLinkObj[topic]);
+                window.open(self.topicLinkObj[topic], '_self');
               }
            }
            // load space topics
