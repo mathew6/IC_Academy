@@ -14,6 +14,15 @@ app.config(['$routeProvider', function($routeProvider){
     .when('/about', {
         templateUrl: 'templates/pages/about/index.html'
     })
+    .when('/topics/rockets',{
+        templateUrl: 'templates/pages/topics/rockets/index.html'
+    })
+    .when('/topics/satelites',{
+        templateUrl: 'templates/pages/topics/satelites/index.html'
+    })
+    .when('/topics/kepler',{
+        templateUrl: 'templates/pages/topics/kepler/index.html'
+    })
     .otherwise({
         redirectTo: '/'
     });
