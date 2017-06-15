@@ -1,5 +1,5 @@
 /* body */
-#header1{
+#header1 {
     position: absolute;
     right: 100px;
     font-style: oblique;
@@ -7,7 +7,8 @@
     top: -15px;
     font-size: 30px;
 }
-h3{
+
+h3 {
     position: fixed;
     top: 50px;
     left: 50px;
@@ -16,12 +17,8 @@ h3{
     overflow: hidden;
 
 }
-#home-page{
-    background-image: url("http://cdn.wallpapersafari.com/71/5/ANst2W.jpg");
-    background-color: blueviolet;
-    width: 100%;
-    height: 100%;
-}
+
+
 h1 {
     font: 40px "Helvetica Neue", Arial, Helvetica;
 }
@@ -79,17 +76,21 @@ iframe {
     margin: 50px;
 }
 
-#listOfTopics {
+#listOfTopics, tr {
     list-style-type: none;
     line-height: 50px;
+    text-align: center;
+    border: solid red 5px;
 }
 
-#listOfTopics a{
+#listOfTopics a {
     color: black;
     text-decoration: none;
 }
 
-#listOfTopics a:hover{
+#listOfTopics a:hover {
     text-decoration: underline;
     color: blue;
+    font-style: italic;
 }
+
