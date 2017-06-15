@@ -8,17 +8,6 @@
     font-size: 30px;
 }
 
-h3 {
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    color: white;
-    font-family: Georgia;
-    overflow: hidden;
-
-}
-
-
 h1 {
     font: 40px "Helvetica Neue", Arial, Helvetica;
 }
@@ -76,7 +65,7 @@ iframe {
     margin: 50px;
 }
 
-#listOfTopics, tr {
+#listOfTopics {
     list-style-type: none;
     line-height: 50px;
     text-align: center;
@@ -92,5 +81,59 @@ iframe {
     text-decoration: underline;
     color: blue;
     font-style: italic;
+}
+
+h3 {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow: hidden;
+    font-size: 45pt;
+    color: gold;
+}
+
+p1 {
+    position: fixed;
+    top: 200px;
+    left: 50px;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow: hidden;
+    font-size: 20pt;
+}
+
+
+#home-page-background {
+    width: 100%;
+}
+
+#home-page-button {
+    position: fixed;
+    top: 265px;
+    left: 50px;
+    padding: 15px 32px;
+    background-color: green;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-color: gold;
+    font-family: Georgia, Haettenschweiler, sans-serif;
+    color: white;
+}
+
+#home-page-button:hover {
+    background-color: gold;
+    color: black;
+    border-color: green;
+}
+
+#topics-page {
+    background-color: lightgreen;
+}
+
+#search-bar {
+    color: red;
 }
 

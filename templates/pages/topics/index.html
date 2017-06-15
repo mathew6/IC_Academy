@@ -1,9 +1,9 @@
 <!-- Topics page html content -->
 
-<div ng-controller="autoCompleteController as ctrl" layout="column">
+<div id="topics-page" ng-controller="autoCompleteController as ctrl" layout="column">
     <h1 id="header1"><strong>Topics</strong></h1>
-    <md-content class="md-padding">
-    <form ng-submit="$event.preventDefault()">
+    <md-content id="search-bar" class="md-padding">
+    <form id="search-bar" ng-submit="$event.preventDefault()">
         <md-autocomplete
             ng-disabled="ctrl.isDisabled"
             md-no-cache="ctrl.noCache"
