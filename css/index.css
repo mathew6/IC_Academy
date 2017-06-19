@@ -65,23 +65,6 @@ iframe {
     margin: 50px;
 }
 
-#listOfTopics li{
-    list-style-type: none;
-    line-height: 50px;
-    text-align: center;
-}
-
-#listOfTopics a {
-    color: black;
-    text-decoration: none;
-}
-
-#listOfTopics a:hover {
-    text-decoration: underline;
-    color: blue;
-    font-style: italic;
-}
-
 h3 {
     position: fixed;
     top: 50px;
@@ -129,12 +112,28 @@ p1 {
 }
 
 #topics-page {
-    background-color: lightsalmon;
-    padding-bottom: 100%;
+    background-image: url('http://hanksrepublic.com/wp-content/uploads/2017/05/excellent-simple-background-collection-of-simple-background-on-hd-wallpapers.jpg');
+    padding-bottom: 500px;
+    background-repeat: no-repeat;
 }
 
 #search-bar {
-    background-color: lightsalmon;
+    background-image: url('http://hanksrepublic.com/wp-content/uploads/2017/05/excellent-simple-background-collection-of-simple-background-on-hd-wallpapers.jpg');
 }
 
+#listOfTopics li{
+    list-style-type: none;
+    line-height: 50px;
+    text-align: center;
+}
 
+#listOfTopics a {
+    color: white;
+    text-decoration: none;
+}
+
+#listOfTopics a:hover {
+    text-decoration: underline;
+    color: aqua;
+    font-style: italic;
+}
