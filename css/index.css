@@ -28,7 +28,7 @@ p {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #003366;
+    background-color: seagreen;
 }
 
 .nav-bar-li {
@@ -102,7 +102,7 @@ p1 {
     top: 265px;
     left: 50px;
     padding: 15px 32px;
-    background-color: green;
+    background-color: seagreen;
     text-align: center;
     text-decoration: none;
     display: inline-block;
