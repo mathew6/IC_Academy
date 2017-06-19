@@ -1,0 +1,37 @@
+#orbital-head{
+    color: blue;
+}
+
+#orbits-video{
+    position: absolute;
+    margin: 50px;
+}
+.orbtis-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.orbits-video iframe {
+	position: absolute;
+	top: 75px;
+	left: 27%;
+	width: 70%;
+	height: 50%;
+}
+
+.side-bar{
+    width: 200px;
+    margin: 30px;
+
+}
+
+#side-bar-list{
+    text-align: center;
+    list-style-type: none;
+    line-height: 50px;
+    font-size: 20px;
+    color: black;
+    border: solid;
+
+}
