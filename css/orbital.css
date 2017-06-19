@@ -42,10 +42,10 @@
 }
 
 #side-bar-list:hover {
-    background-color: darkorange;
+    background-color: cyan;
     border: none;
 }
 
 #blah button {
-    background-color: silver;
+    background-color: lavender;
 }
