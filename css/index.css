@@ -144,14 +144,20 @@ p1 {
 
 #listOfTopics a:hover {
     text-decoration: none;
-    color: darkorange;
+    color: springgreen;
     font-style: italic;
 }
 
-/*#topic-button {
-    display: block;
-    background-color: white;
-}*/
+#topic-link {
+    background-color: navajowhite;
+    margin: 10px;
+    margin-left: 600px;
+    margin-right: 600px;
+    border: 2.5px solid black;
+    border-radius: 100px;
+}
+
+
 
 #about-page {
     background-color: navajowhite;
