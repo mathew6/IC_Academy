@@ -65,6 +65,12 @@ iframe {
     margin: 50px;
 }
 
+#video-page {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: springgreen;
+}
+
 h3 {
     position: fixed;
     top: 50px;
@@ -126,14 +132,14 @@ p1 {
 
 #listOfTopics li{
     list-style-type: none;
-    line-height: 100px;
+    line-height: 50px;
     text-align: center;
 }
 
 #listOfTopics a {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-size: 40pt;
+    font-size: 20pt;
 }
 
 #listOfTopics a:hover {
@@ -142,8 +148,13 @@ p1 {
     font-style: italic;
 }
 
+/*#topic-button {
+    display: block;
+    background-color: white;
+}*/
+
 #about-page {
-    background-color: greenyellow;
+    background-color: navajowhite;
     padding-bottom: 630px;
     padding-top: 25px;
 }

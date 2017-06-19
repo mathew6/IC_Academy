@@ -61,7 +61,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
                $log.info("addTopicsToTab was called");
                for (var key in self.topicLinkObj) {                 
                    var topic_link = key.link(self.topicLinkObj[key]);
-                   document.getElementById("listOfTopics").innerHTML +="<li>" + topic_link + "</li>";
+                   document.getElementById("listOfTopics").innerHTML +="<li id='topic-button'>" + topic_link + "</li>";
                 }
             }
         };
