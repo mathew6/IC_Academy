@@ -65,11 +65,10 @@ iframe {
     margin: 50px;
 }
 
-#listOfTopics {
+#listOfTopics li{
     list-style-type: none;
     line-height: 50px;
     text-align: center;
-    border: solid red 5px;
 }
 
 #listOfTopics a {
@@ -130,10 +129,12 @@ p1 {
 }
 
 #topics-page {
-    background-color: lightgreen;
+    background-color: lightsalmon;
+    padding-bottom: 100%;
 }
 
 #search-bar {
-    color: red;
+    background-color: lightsalmon;
 }
+
 
