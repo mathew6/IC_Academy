@@ -112,28 +112,37 @@ p1 {
 }
 
 #topics-page {
-    background-image: url('http://hanksrepublic.com/wp-content/uploads/2017/05/excellent-simple-background-collection-of-simple-background-on-hd-wallpapers.jpg');
-    padding-bottom: 500px;
+    background-image: url('http://eskipaper.com/images/simple-cloud-wallpaper-1.jpg');
+    /*background-image: url('http://hdqwalls.com/wallpapers/background-texture-wallpaper.jpg');*/
+    padding-bottom: 700px;
     background-repeat: no-repeat;
 }
 
 #search-bar {
-    background-image: url('http://hanksrepublic.com/wp-content/uploads/2017/05/excellent-simple-background-collection-of-simple-background-on-hd-wallpapers.jpg');
+    /*background-image: url('http://hdqwalls.com/wallpapers/background-texture-wallpaper.jpg');*/
+    background-image: url('http://eskipaper.com/images/simple-cloud-wallpaper-1.jpg');
 }
 
 #listOfTopics li{
     list-style-type: none;
-    line-height: 50px;
+    line-height: 100px;
     text-align: center;
 }
 
 #listOfTopics a {
     color: white;
     text-decoration: none;
+    font-size: 40pt;
 }
 
 #listOfTopics a:hover {
-    text-decoration: underline;
-    color: aqua;
+    text-decoration: none;
+    color: darkorange;
     font-style: italic;
+}
+
+#about-page {
+    background-color: greenyellow;
+    padding-bottom: 630px;
+    padding-top: 25px;
 }
