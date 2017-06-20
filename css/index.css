@@ -108,6 +108,7 @@ p1 {
     text-decoration: none;
     display: inline-block;
     border-color: gold;
+    border-radius: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
 }
