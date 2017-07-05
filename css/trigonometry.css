@@ -1,0 +1,51 @@
+#trig-page {
+    background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/857/full/tileable-classic-nebula-space-patterns-6.jpg');
+    padding-bottom: 630px;
+    padding-top: 25px;
+}
+
+#trig-head{
+    color: whitesmoke;
+}
+
+#trig-video{
+    position: absolute;
+    margin: 50px;
+}
+.trig-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+    
+}
+.trig-video iframe {
+	position: absolute;
+	top: 135px;
+	left: 400px;
+	width: 70%;
+	height: 45%;
+}
+
+.side-bar{
+    width: 300px;
+    
+}
+
+#side-bar-list{
+    text-align: left;
+    list-style-type: none;
+    line-height: 50px;
+    font-size: 12pt;
+    margin-right: 100px;
+    color: black;
+    border-color: black;
+    width: 300px;
+}
+
+#side-bar-list:hover {
+    background-color: cyan;
+    border: none;
+}
+
+#blah button {
+    background-color: lavender;
+}

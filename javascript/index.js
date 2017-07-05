@@ -20,19 +20,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/about',
         templateUrl: 'templates/pages/about/index.html'
     })
+
+    //---------Orbital-------//
     .state('orbital',{
         url: '/topics/orbital',
         templateUrl: 'templates/pages/topics/orbital/index.html'
     })
-    .state('satellites',{
-        url: '/topics/satellites',
-        templateUrl: 'templates/pages/topics/satellites/index.html'
-    })
-    .state('kepler',{
-        url: '/topics/kepler',
-        templateUrl: 'templates/pages/topics/kepler/index.html'
-    })
-    .state('orbital.Lesson1', {
+        .state('orbital.Lesson1', {
         url: '/topics/orbital/lesson1',
         templateUrl: 'templates/pages/topics/orbital/lesson1.html'
     })
@@ -56,10 +50,48 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/topics/orbital/lesson6',
         templateUrl: 'templates/pages/topics/orbital/lesson6.html'
     })
+
+    //---------Satelllite--------//
+    .state('satellites',{
+        url: '/topics/satellites',
+        templateUrl: 'templates/pages/topics/satellites/index.html'
+    })
+
+    //----------Kepler---------//
+    .state('kepler',{
+        url: '/topics/kepler',
+        templateUrl: 'templates/pages/topics/kepler/index.html'
+    })
+
+    //----------Trigonometry------//
     .state('trigonometry', {
         url: '/topics/trigonometry',
         templateUrl: 'templates/pages/topics/trigonometry/index.html'
-    })        
+    })
+    .state('trigonometry.Lesson1', {
+        url: '/topics/trigonometry/lesson1',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson1.html'
+    })
+    .state('trigonometry.Lesson2', {
+        url: '/topics/trigonometry/lesson2',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson2.html'
+    })
+    .state('trigonometry.Lesson3', {
+        url: '/topics/trigonometry/lesson3',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson3.html'
+    })
+    .state('trigonometry.Lesson4', {
+        url: '/topics/trigonometry/lesson4',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson4.html'
+    })
+    .state('trigonometry.Lesson5', {
+        url: '/topics/trigonometry/lesson5',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson5.html'
+    })
+    .state('trigonometry.Lesson6', {
+        url: '/topics/trigonometry/lesson6',
+        templateUrl: 'templates/pages/topics/trigonometry/lesson6.html'
+    })
 });
 app.run(function($rootScope, $state, $document, $stateParams){ 
     $rootScope.$state = $state; $rootScope.$stateParams = $stateParams;
