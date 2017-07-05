@@ -12,7 +12,8 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            self.searchTextChange   = searchTextChange;
            self.topicLinkObj = {"Orbital Mechanics" : "#!/topics/orbital",
                             "Satellite" : "#!/topics/satellites", 
-                            "Kepler" : "#!/topics/kepler"};
+                            "Kepler" : "#!/topics/kepler",
+                            "Trigonometry" : "#!/topics/trigonometry"};
            addTopicsToTab();
 
            // search for topic searched by user
@@ -42,7 +43,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            }
            // load space topics
            function loadTopics() {
-              var allTopics = "Orbital Mechanics, Satellite, Kepler";
+              var allTopics = "Orbital Mechanics, Satellite, Kepler, Trigonometry";
               return allTopics.split(/, +/g).map( function (topic) {
                  return {
                     value: topic.toLowerCase(),

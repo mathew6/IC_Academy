@@ -55,6 +55,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('orbital.Lesson6', {
         url: '/topics/orbital/lesson6',
         templateUrl: 'templates/pages/topics/orbital/lesson6.html'
+    })
+    .state('trigonometry', {
+        url: '/topics/trigonometry',
+        templateUrl: 'templates/pages/topics/trigonometry/index.html'
     })        
 });
 app.run(function($rootScope, $state, $document, $stateParams){ 
