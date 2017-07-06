@@ -17,7 +17,7 @@
 	padding-bottom: 56.25%; /* 16:9 */
     
 }
-.orbits-video iframe {
+iframe {
 	position: absolute;
 	top: 135px;
 	left: 400px;
