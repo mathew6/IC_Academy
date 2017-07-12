@@ -43,7 +43,7 @@ iframe {
 
 #side-bar-list:hover {
     background-color: cyan;
-    border: none;
+    border: cyan;
 }
 
 #blah button {
