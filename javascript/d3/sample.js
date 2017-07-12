@@ -1,5 +1,0 @@
-d3.select("body")
-  .append("p")
-  .text("This works")
-  .style('color', 'purple')
-  .style('background-color', 'cyan')
