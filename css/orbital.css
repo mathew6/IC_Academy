@@ -54,6 +54,7 @@ iframe {
 .lesson-header {
     color:white;
     padding: 50px;
+    padding-top: 20px;
     padding-bottom:20px; 
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

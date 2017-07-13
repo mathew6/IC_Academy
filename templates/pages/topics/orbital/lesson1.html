@@ -3,11 +3,15 @@
 <svg width="100%" height="450" style="padding-left:250px;">
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
 
-    <circle r = "20" fill = "yellow" stroke = "black" stroke-width = "3">
+    <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
         <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
             <mpath xlink:href="#orbit"/>
         </animateMotion>
     </circle>
 
-    <circle cx="300" cy="225" r="50" fill="blue">
+    <circle cx="300" cy="225" r="50" fill="blue"/>
+
+    <circle cx="500" cy="225" r="5" fill="yellow" />
+    <line x1="900" y1="225" x2="500" y2="225" style="stroke:rgb(255,0,0);stroke-width:2"/>
+    <line x1="500" y1="225" x2="500" y2="425" style="stroke:rgb(255,0,0);stroke-width:2"/>
 </svg>
