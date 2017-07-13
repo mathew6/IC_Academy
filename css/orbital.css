@@ -6,6 +6,7 @@
 
 #orbital-head{
     color: whitesmoke;
+    padding-left: 25px;
 }
 
 #orbits-video{
@@ -50,18 +51,9 @@ iframe {
     background-color: lavender;
 }
 
-@-webkit-keyframes spin-right {
-    100% {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-    }
+.lesson-header {
+    color:white;
+    padding: 50px;
+    padding-bottom:20px; 
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
-/*#sat {
-    -webkit-animation: spin-right 10s linear infinite;
-    animation: spin-right 10s linear infinite;
-    left: 200px;
-    border: 5px solid wheat;
-}*/
