@@ -71,7 +71,9 @@ more bodies of similar mass, such as a binary star system (see n-body problem). 
  stars the differences between classical mechanics and general relativity also become important.</p>
 </div>
 
-<h1 class="lesson-header">Ecentricity, Apogee, and Perigee</h1>
+<!--Eccentricity -->
+
+<h1 class="lesson-header">Ecentricity</h1>
 
 <svg width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
@@ -87,14 +89,16 @@ more bodies of similar mass, such as a binary star system (see n-body problem). 
     <line x1="100" y1="225" x2="500" y2="225" style="stroke:rgb(255,0,0);stroke-width:2"/>
     <line x1="500" y1="225" x2="500" y2="425" style="stroke:royalblue;stroke-width:2"/>
     <line x1="300" y1="225" x2="500" y2="425" style="stroke:purple;stroke-width:2"/>
+    <text x="450" y="-60" fill="white" transform="rotate(45)">Eccentricity</text>
 </svg>
 
 <div class="orbit-text">
 
-<h1>Ellipses</h1>
-<p> "The orbit of every planet is an ellipse with the sun at a focus." Johannes Kepler exclaimed after
-    observing Mars for several years and tracking its motion around the sun. Similar to planets traveling around the sun, satalleties
-    also orbit the earth in elliptical paths. Lets first go over the make up of an ellipse:
+<h1>Ecentricity</h1>
+<p> "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 </p>
 <table>
     <tr>
@@ -104,22 +108,85 @@ more bodies of similar mass, such as a binary star system (see n-body problem). 
     </tr>
     <tr>
         <td>Eccentricity</td>
+        <td>The distance between eithier foci and the origin divided by the semi-major axis.</td>
+        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></svg></td>
+    </tr>
+    <tr>
+        <td>Origin</td>
         <td>Center point of ellipses.</td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></svg></td>
+        <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="orange"/></svg></td>
     </tr>
     <tr>
-        <td>Apogee</td>
-        <td></td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></td>
+        <td>Foci</td>
+        <td>Two fixed points on the interior of an ellipse used in the formal definition of the curve.</td>
+        <td><svg width="100" height="50"><image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="30" y="8" height="40" width="40"/></svg></td>
     </tr>
     <tr>
-        <td>Perigee</td>
-        <td></td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></svg></td>
+        <td>Semi-Major Axis</td>
+        <td>The radius of an orbit at the orbit's two most distant points</td>
+        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(255,0,0);stroke-width:2"/></svg></td>
+    </tr>
+    <tr>
+        <td>Semi-Minor Axis</td>
+        <td>The radius of an orbit at the orbit's two nearest points</td>
+        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(0,0,255);stroke-width:2"/></svg></td>
     </tr>
 </table>
 <p> As demonstrated above, the satellite (green moving circle) is traveling around the Earth 
     which is a focus. The other focus (also referred to as the vacant focus) is another point in space 
     symmetrical to the Earth just on the opposite side.
 </p>
+</div>
+
+<!--Apogee, Perogee -->
+<h1 class="lesson-header">Apogee and Perigee</h1>
+<svg width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
+    <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
+
+    <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
+        <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
+            <mpath xlink:href="#orbit"/>
+        </animateMotion>
+    </circle>
+    <image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="250" y="175" height="100" width="100"/>  
+
+    <circle cx="500" cy="225" r="5" fill="orange" />
+    <line x1="100" y1="225" x2="250" y2="225" style="stroke:gold;stroke-width:2"/>
+    <line x1="350" y1="225" x2="900" y2="225" style="stroke:green;stroke-width:2"/>
+</svg>
+
+<div class="orbit-text">
+
+    <h1>Apogee and Perigee</h1>
+    <p> "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Definition</th>
+            <th>Key</th>
+        </tr>
+        <tr>
+            <td>Apogee</td>
+            <td>The furthest point of an orbit to the Earth..</td>
+            <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:gold;stroke-width:2"/></svg></td>
+        </tr>
+        <tr>
+            <td>Perigee</td>
+            <td>The closest point of an orbit to the Earth.</td>
+            <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:green;stroke-width:2"/></svg></td>
+        </tr>
+    </table>
+    <p>  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
 </div>
