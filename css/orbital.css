@@ -46,18 +46,22 @@ iframe {
 }
 
 .lesson-header {
-    color:white;
+    color:black;
     padding: 50px;
     padding-top: 20px;
     padding-bottom:20px; 
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #94A3E3;
     text-align: center;
+    border: 5px solid black;
+    border-radius: 40px;
 }
 
 p {
     color: black;
     background-color: #94A3E3;
-    padding: 10px 100px;
-    margin: 10px 0px;
+    padding: 10px 40px;
+    margin: 10px 100px;
+    border: 5px solid black;
+    border-radius: 40px;
 }
