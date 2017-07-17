@@ -11,10 +11,11 @@
     
 iframe {
 	position: absolute;
-	top: 50px;
+	top: 150px;
 	left: 400px;
 	width: 1117.5px;
-	height: 457.75px;
+	height: 325px;
+    border: 10px solid black;
 }
 
 .side-bar{
@@ -24,7 +25,7 @@ iframe {
 }
 
 #side-bar-list{
-    text-align: left;
+    text-align: center;
     list-style-type: none;
     line-height: 50px;
     font-size: 15pt;
@@ -43,10 +44,12 @@ iframe {
     background-color: lavender;
     width: 400px;
     margin-left: -40px;
+    border-radius: 40px;
 }
 
 .lesson-header {
-    color:black;
+    color:white;
+    -webkit-text-stroke: 2px black;
     padding: 50px;
     padding-top: 20px;
     padding-bottom:20px; 
@@ -57,7 +60,7 @@ iframe {
     border-radius: 40px;
 }
 
-p {
+.orbit-text {
     color: black;
     background-color: #94A3E3;
     padding: 10px 40px;
@@ -65,3 +68,19 @@ p {
     border: 5px solid black;
     border-radius: 40px;
 }
+
+table {
+    margin-right: 200px;
+    margin-left: 400px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
