@@ -27,27 +27,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/pages/topics/orbital/index.html'
     })
         .state('orbital.Lesson1', {
-        url: '/topics/orbital/lesson1',
+        url: '/lesson1',
         templateUrl: 'templates/pages/topics/orbital/lesson1.html'
     })
     .state('orbital.Lesson2', {
-        url: '/topics/orbital/lesson2',
+        url: '/lesson2',
         templateUrl: 'templates/pages/topics/orbital/lesson2.html'
     })
     .state('orbital.Lesson3', {
-        url: '/topics/orbital/lesson3',
+        url: '/lesson3',
         templateUrl: 'templates/pages/topics/orbital/lesson3.html'
     })
     .state('orbital.Lesson4', {
-        url: '/topics/orbital/lesson4',
+        url: '/lesson4',
         templateUrl: 'templates/pages/topics/orbital/lesson4.html'
     })    
     .state('orbital.Lesson5', {
-        url: '/topics/orbital/lesson5',
+        url: '/lesson5',
         templateUrl: 'templates/pages/topics/orbital/lesson5.html'
     })       
     .state('orbital.Lesson6', {
-        url: '/topics/orbital/lesson6',
+        url: '/lesson6',
         templateUrl: 'templates/pages/topics/orbital/lesson6.html'
     })
 
@@ -69,27 +69,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/pages/topics/trigonometry/index.html'
     })
     .state('trigonometry.Lesson1', {
-        url: '/topics/trigonometry/lesson1',
+        url: '/lesson1',
         templateUrl: 'templates/pages/topics/trigonometry/lesson1.html'
     })
     .state('trigonometry.Lesson2', {
-        url: '/topics/trigonometry/lesson2',
+        url: '/lesson2',
         templateUrl: 'templates/pages/topics/trigonometry/lesson2.html'
     })
     .state('trigonometry.Lesson3', {
-        url: '/topics/trigonometry/lesson3',
+        url: '/lesson3',
         templateUrl: 'templates/pages/topics/trigonometry/lesson3.html'
     })
     .state('trigonometry.Lesson4', {
-        url: '/topics/trigonometry/lesson4',
+        url: '/lesson4',
         templateUrl: 'templates/pages/topics/trigonometry/lesson4.html'
     })
     .state('trigonometry.Lesson5', {
-        url: '/topics/trigonometry/lesson5',
+        url: '/lesson5',
         templateUrl: 'templates/pages/topics/trigonometry/lesson5.html'
     })
     .state('trigonometry.Lesson6', {
-        url: '/topics/trigonometry/lesson6',
+        url: '/lesson6',
         templateUrl: 'templates/pages/topics/trigonometry/lesson6.html'
     })
 });
