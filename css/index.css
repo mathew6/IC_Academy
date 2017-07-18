@@ -22,14 +22,22 @@ p {
     margin: 20px;
 }
 
+
+
+
+
+
+
+
+
 /* Nav bar */
 #nav-bar-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: seagreen;
-    border-bottom: 2.5px solid gold;
+    background-color: orangered;
+    border-bottom: 2.5px solid #94A3E3;
 }
 
 .nav-bar-li {
@@ -42,15 +50,29 @@ p {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .nav-bar-li a:hover {
-    background-color: #FFD700;
+    background-color: #94A3E3;
 }
 
 .nav-bar-li a:active {
     background-color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
 
  /* Videos */ 
 iframe {
@@ -80,19 +102,33 @@ h3 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     overflow: hidden;
     font-size: 45pt;
-    color: gold;
+    color: #94A3E3;
 }
 
 p1 {
     position: fixed;
     top: 200px;
     left: 50px;
-    color: black;
+    color:white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     overflow: hidden;
     font-size: 20pt;
 }
 
+
+
+
+
+
+
+
+
+
+
+#home-page {
+    background-image: url('http://wallpapercave.com/wp/7NvodtH.jpg');
+    padding-bottom: 710px;
+}
 
 #home-page-background {
     width: 100%;
@@ -103,20 +139,23 @@ p1 {
     top: 265px;
     left: 50px;
     padding: 15px 32px;
-    background-color: seagreen;
+    background-color: orangered;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-color: gold;
+    border-color: #94A3E3;
     border-radius: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 #home-page-button:hover {
-    background-color: gold;
+    background-color: #94A3E3;
     color: black;
-    border-color: seagreen;
+    border-color: orangered;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -126,42 +165,75 @@ p1 {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
 #topics-page {
-    background-image: url('http://eskipaper.com/images/simple-cloud-wallpaper-1.jpg');
+    background-color: black;
     padding-bottom: 700px;
     background-repeat: no-repeat;
 }
 
 #search-bar {
-    background-image: url('http://eskipaper.com/images/simple-cloud-wallpaper-1.jpg');
+    background-color: black;
+}
+
+#listOfTopics {
+    list-style-type: none;
+    margin: 0px 550px;
+    padding: 30px 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: orangered;
 }
 
 #listOfTopics li{
     list-style-type: none;
-    line-height: 50px;
+    line-height: 60px;
     text-align: center;
 }
 
 #listOfTopics a {
     color: black;
     text-decoration: none;
-    font-size: 15pt;
+    font-size: 20pt;
 }
 
 #listOfTopics a:hover {
     text-decoration: none;
-    color: seagreen;
-    font-style: italic;
+    color: orangered;
+    background-color: springgreen;
+    border-color: white;
 }
 
-#topic-link {
-    background-color: navajowhite;
-    margin: 10px;
-    margin-left: 550px;
-    margin-right: 550px;
+
+#topic-link a{
+    background-color: #94A3E3;
     border: 2.5px solid black;
-    border-radius: 50px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
