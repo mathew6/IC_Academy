@@ -1,4 +1,4 @@
-var app = angular.module('firstApplication', ['ngMaterial', 'ngRoute', 'ui.router']);
+var app = angular.module('firstApplication', ['ngMaterial', 'ui.router']);
 
 //UI-router
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -32,7 +32,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('orbital.Lesson2', {
         url: '/lesson2',
-        templateUrl: 'templates/pages/topics/orbital/lesson2.html'
+        templateUrl: 'templates/pages/topics/orbital/lesson2.html',
     })
     .state('orbital.Lesson3', {
         url: '/lesson3',
