@@ -103,6 +103,7 @@ h3 {
     overflow: hidden;
     font-size: 45pt;
     color: #94A3E3;
+    -webkit-text-stroke: 2px orangered;
 }
 
 p1 {
