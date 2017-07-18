@@ -4,6 +4,7 @@
     right: 100px;
     font-style: oblique;
     color: white;
+    -webkit-text-stroke: 2px black;
     top: -15px;
     font-size: 30px;
 }
@@ -47,6 +48,9 @@ p {
 .nav-bar-li a {
     display: block;
     color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12pt;
+    -webkit-text-stroke: .25px black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -148,6 +152,7 @@ p1 {
     border-radius: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
+    -webkit-text-stroke: 1px black;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -158,6 +163,7 @@ p1 {
     color: black;
     border-color: orangered;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size: 25pt;
 }
 
 #home-page-button:active {
@@ -179,7 +185,7 @@ p1 {
 
 #topics-page {
     background-color: black;
-    padding-bottom: 700px;
+    padding-bottom: 400px;
     background-repeat: no-repeat;
 }
 
@@ -190,10 +196,11 @@ p1 {
 #listOfTopics {
     list-style-type: none;
     margin: 0px 550px;
-    padding: 30px 30px;
+    padding: 50px 50px;
+    border: 5px solid orangered;
     border-radius: 100%;
     overflow: hidden;
-    background-color: orangered;
+    background-color: white;
 }
 
 #listOfTopics li{
@@ -205,18 +212,11 @@ p1 {
 #listOfTopics a {
     color: black;
     text-decoration: none;
-    font-size: 20pt;
+    font-size: 15pt;
 }
-
-#listOfTopics a:hover {
-    text-decoration: none;
-    color: orangered;
-    background-color: springgreen;
-    border-color: white;
-}
-
 
 #topic-link a{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     background-color: #94A3E3;
     border: 2.5px solid black;
     border-radius: 10px;
@@ -224,6 +224,14 @@ p1 {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+#topic-link a:hover {
+    text-decoration: none;
+    color: orangered;
+    background-color: springgreen;
+    border-color: white;
+    font-size: 20pt;
 }
 
 

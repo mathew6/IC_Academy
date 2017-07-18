@@ -2,6 +2,7 @@
     background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/857/full/tileable-classic-nebula-space-patterns-6.jpg');
     padding-bottom: 260px;
     padding-top: 25px;
+    
 }
 
 #orbital-head{
@@ -27,6 +28,7 @@ iframe {
     text-align: center;
     list-style-type: none;
     line-height: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 15pt;
     color: black;
     border-color: #94A3E3;
@@ -64,8 +66,17 @@ iframe {
     border-radius: 40px;
 }
 
+h1 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+p {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
 .orbit-text {
     color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     background-color: #94A3E3;
     padding: 10px 40px;
     margin: 10px 100px;
@@ -108,6 +119,7 @@ table, th {
     text-decoration: none;
     border-radius: 10px;
     color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     border-color: #94A3E3;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
