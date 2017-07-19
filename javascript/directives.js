@@ -8,33 +8,31 @@ app.directive('bindDeeThreeStuff', function($window){
       //d3 content starts here
 
       
-      
-      var ellipseData = [ {} ]
+        var svgContainer = d3.select("#test").append("svg")
+                                        .attr("width", 1000)
+                                        .attr("height",500);
 
-      var dataset = [ 5, 10, 15, 20, 25, 30, 35 ];
-       
-      d3.select("#test").selectAll("p")
-        .data(dataset)
-        .enter()
-        .append("p")
-        .text(function(d) { return 'There are ' + 100*d + ' turtles sleeping.'})
-        .style("color", function(d) {
-          if (d < 25) {
-            return "red";
-          }
-          else {
-            return "lime";
-          }
-        })
-        .style("font-size", function(d) {
-          return 1.5*d + "pt";
-        });
+
+        var ellipse = svgContainer.append("path")
+                                  .attr("d", "M 100,225a 400,200 0 1,0 800,0 a 400,200 0 1,0 -800,0")
+                                  .attr("stroke", "white")
+                                  .attr("stroke-width", 3)
+                                  .attr("fill", "none");
+
+        svgContainer.append('circle').attr('r', 20)
+                                .attr('cx', 100)
+                                .attr('cy', 100)
+                                .attr('fill', 'silver')
+                                .attr('stroke', "lime")
+                                .attr('stroke-width', 1)
+
+
 
         var width = 800;
         var height = 300;
         var rx = 300;
         var ry = 100;
-        
+
         var holder = d3.select("#slider")
               .append("svg")
               .attr("width", width)    
@@ -60,13 +58,12 @@ app.directive('bindDeeThreeStuff', function($window){
 
         // update the elements
         function update(nRadius) {
-          var focus = rx - cx
 
           // adjust the text on the range slider
-          d3.select("#nRadius-value").text(Math.sqrt(nRadius)/ry);
+          d3.select("#nRadius-value").text(Math.sqrt(nRadius)/rx);
           d3.select("#nRadius").property("value", nRadius);
 
-          // update the rircle radius
+          // update the circle radius
           holder.selectAll("ellipse") 
             .attr("rx", nRadius);
         }
