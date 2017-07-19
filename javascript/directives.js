@@ -17,7 +17,7 @@ app.directive('bindDeeThreeStuff', function($window){
         .data(dataset)
         .enter()
         .append("p")
-        .text(function(d) { return 'There are ' + 100*d + ' turles sleeping.'})
+        .text(function(d) { return 'There are ' + 100*d + ' turtles sleeping.'})
         .style("color", function(d) {
           if (d < 25) {
             return "red";
@@ -29,18 +29,6 @@ app.directive('bindDeeThreeStuff', function($window){
         .style("font-size", function(d) {
           return 1.5*d + "pt";
         });
-
-
-
-        // d3.select('#slider3')
-        //   .call(d3.slider().axis(true)
-        //   .value( [ 10, 25 ] )
-        //   .on("slide", function(evt, value) {
-        //     d3.select('#slider3textmin')
-        //       .text(value[ 0 ]);
-        //     d3.select('#slider3textmax')
-        //       .text(value[ 1 ]);
-        // }));
 
         var width = 800;
         var height = 300;
@@ -72,9 +60,10 @@ app.directive('bindDeeThreeStuff', function($window){
 
         // update the elements
         function update(nRadius) {
+          var focus = rx - cx
 
           // adjust the text on the range slider
-          d3.select("#nRadius-value").text(Math.sqrt(nRadius)/10);
+          d3.select("#nRadius-value").text(Math.sqrt(nRadius)/ry);
           d3.select("#nRadius").property("value", nRadius);
 
           // update the rircle radius
