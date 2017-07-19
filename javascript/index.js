@@ -24,7 +24,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     //---------Orbital-------//
     .state('orbital',{
         url: '/topics/orbital',
-        templateUrl: 'templates/pages/topics/orbital/index.html'
+        // templateUrl: 'templates/pages/topics/orbital/index.html'
+        templateURL: 'templates/pages/about/index.html'
     })
         .state('orbital.Lesson1', {
         url: '/lesson1',
