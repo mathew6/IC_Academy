@@ -60,7 +60,7 @@ app.directive('bindDeeThreeStuff', function($window){
         function update(nRadius) {
 
           // adjust the text on the range slider
-          d3.select("#nRadius-value").text(Math.sqrt(nRadius)/rx);
+          d3.select("#nRadius-value").text((Math.sqrt(nRadius)* 10)/rx);
           d3.select("#nRadius").property("value", nRadius);
 
           // update the circle radius
