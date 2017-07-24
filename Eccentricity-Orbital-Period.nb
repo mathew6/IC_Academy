@@ -1,0 +1,402 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16473,        392]
+NotebookOptionsPosition[     15805,        369]
+NotebookOutlinePosition[     16179,        385]
+CellTagsIndexPosition[     16136,        382]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",ExpressionUUID->"e8a0ac3a-3a74-48e8-ae89-c20f7a9523d0"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.709896406328*^9, 
+  3.70989640701*^9}},ExpressionUUID->"a5902bda-caa0-4ab8-961c-107fe46abc9f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"a", "=", "1"}], ",", "b", ",", "c", ",", "planet", ",", 
+        "dist", ",", "M", ",", "M2", ",", "area", ",", "area2", ",", "ea", 
+        ",", "eanom", ",", "eanom2", ",", "p"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"t", ">", "P"}], ",", 
+         RowBox[{"t", "=", "P"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"dt", ">", "P"}], ",", 
+         RowBox[{"dt", "=", "P"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"b", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"a", "^", "2"}]}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"e", "^", "2"}], "-", "1"}], ")"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"c", "=", 
+        RowBox[{"e", " ", "a"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"M", "=", 
+        RowBox[{"2", " ", "Pi", " ", 
+         RowBox[{"t", "/", "P"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"M2", "=", 
+        RowBox[{"2", " ", "Pi", " ", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"t", "+", "dt"}], ")"}], "/", "P"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"area", "=", 
+        RowBox[{"a", " ", "b", " ", 
+         RowBox[{"M", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"area2", "=", 
+        RowBox[{"a", " ", "b", " ", 
+         RowBox[{"M2", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"eanom", "=", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{"ea", "/.", 
+           RowBox[{"FindRoot", "[", 
+            RowBox[{
+             RowBox[{"M", "\[Equal]", 
+              RowBox[{"ea", "-", 
+               RowBox[{"e", " ", 
+                RowBox[{"Sin", "[", "ea", "]"}]}]}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"ea", ",", "M"}], "}"}]}], "]"}]}], ",", 
+          RowBox[{"2", " ", "Pi"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"eanom2", "=", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{"ea", "/.", 
+           RowBox[{"FindRoot", "[", 
+            RowBox[{
+             RowBox[{"M2", "\[Equal]", 
+              RowBox[{"ea", "-", 
+               RowBox[{"e", " ", 
+                RowBox[{"Sin", "[", "ea", "]"}]}]}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"ea", ",", "M2"}], "}"}]}], "]"}]}], ",", 
+          RowBox[{"2", " ", "Pi"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"eanom2", "<", "eanom"}], ",", 
+         RowBox[{"eanom2", "=", 
+          RowBox[{
+           RowBox[{"2", " ", "Pi"}], "+", "eanom2"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"p", "=", 
+        RowBox[{
+         RowBox[{"b", "^", "2"}], "/", "a"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"planet", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", " ", 
+            RowBox[{"Cos", "[", "eanom", "]"}]}], "-", "c"}], ",", 
+          RowBox[{"b", " ", 
+           RowBox[{"Sin", "[", "eanom", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"RGBColor", "[", 
+            RowBox[{".3", ",", ".3", ",", ".7"}], "]"}], ",", 
+           RowBox[{"Thickness", "[", ".005", "]"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{"Join", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}], ",", 
+               RowBox[{"Sequence", "@@", 
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"a", " ", 
+                    RowBox[{"Cos", "[", "angle", "]"}]}], "-", "c"}], ",", 
+                    RowBox[{"b", " ", 
+                    RowBox[{"Sin", "[", "angle", "]"}]}]}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "angle", ",", "eanom", ",", "eanom2", ",", ".001"}], 
+                   "}"}]}], "]"}]}], ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}]}], "}"}], "]"}], "]"}], ",", 
+           RowBox[{"RGBColor", "[", 
+            RowBox[{".05", ",", "0.6", ",", "1"}], "]"}], ",", 
+           RowBox[{"Thickness", "[", ".009", "]"}], ",", 
+           RowBox[{"Circle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "c"}], ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"a", ",", "b"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "1.1"}], "-", "c"}], ",", 
+              RowBox[{"1.1", "-", "c"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1.1"}], ",", "1.1"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"1", ",", "0.7", ",", "0"}], "]"}], ",", 
+            RowBox[{"Disk", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}], ",", ".05"}], "]"}], ",", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{".77", ",", ".29", ",", ".55"}], "]"}], ",", 
+            RowBox[{"PointSize", "[", ".02", "]"}], ",", 
+            RowBox[{"Point", "[", "planet", "]"}]}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"350", ",", "350"}], "}"}]}], ",", 
+         RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+         RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+         RowBox[{"PlotLabel", "\[Rule]", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{"\"\<area = \>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"NumberForm", "[", 
+               RowBox[{
+                RowBox[{"area2", "-", "area"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"4", ",", "2"}], "}"}]}], "]"}], "]"}], "<>", 
+             "\"\< \!\(\*SuperscriptBox[\(AU\), \(2\)]\)\>\""}], "}"}], 
+           "]"}]}]}], "]"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "\"\<time since perihelion (years)\>\""}], 
+       "}"}], ",", "0", ",", "P", ",", ".01", ",", 
+      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"e", ",", ".5", ",", "\"\<eccentricity\>\""}], "}"}], ",", "0",
+       ",", ".9", ",", ".01", ",", 
+      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"P", ",", "20", ",", "\"\<orbit period (years)\>\""}], "}"}], 
+      ",", "0.1", ",", " ", "50", ",", " ", "0.01", ",", 
+      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"dt", ",", "5", ",", "\"\<time span (years)\>\""}], "}"}], ",",
+       ".1", ",", "P", ",", ".01", ",", 
+      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "\"\<animate time since perihelion\>\""}], 
+       "}"}], ",", "0", ",", "P", ",", ".01", ",", 
+      RowBox[{"ControlType", "\[Rule]", "Trigger"}]}], "}"}], ",", 
+    RowBox[{"AutorunSequencing", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], ",", 
+    RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.709894294017*^9, 3.709894294632*^9}, {3.709895815715*^9,
+    3.709895826726*^9}, {3.709896436909*^9, 3.709896461933*^9}, 
+   3.709896541184*^9},ExpressionUUID->"356594dc-6e19-42c3-aa5a-53c2421883a5"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dt$$ = 5, $CellContext`e$$ = 
+    0.5, $CellContext`P$$ = 20, $CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0, "time since perihelion (years)"}, 0, 
+      Dynamic[$CellContext`P$$], 0.01}, {{
+       Hold[$CellContext`e$$], 0.5, "eccentricity"}, 0, 0.9, 0.01}, {{
+       Hold[$CellContext`P$$], 20, "orbit period (years)"}, 0.1, 50, 0.01}, {{
+       Hold[$CellContext`dt$$], 5, "time span (years)"}, 0.1, 
+      Dynamic[$CellContext`P$$], 0.01}, {{
+       Hold[$CellContext`t$$], 0, "animate time since perihelion"}, 0, 
+      Dynamic[$CellContext`P$$], 0.01}}, Typeset`size$$ = {
+    245., {120., 125.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$8809$$ = 
+    0, $CellContext`e$8810$$ = 0, $CellContext`P$8811$$ = 
+    0, $CellContext`dt$8812$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dt$$ = 5, $CellContext`e$$ = 
+        0.5, $CellContext`P$$ = 20, $CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$8809$$, 0], 
+        Hold[$CellContext`e$$, $CellContext`e$8810$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$8811$$, 0], 
+        Hold[$CellContext`dt$$, $CellContext`dt$8812$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`a$ = 
+         1, $CellContext`b$, $CellContext`c$, $CellContext`planet$, \
+$CellContext`dist$, $CellContext`M$, $CellContext`M2$, $CellContext`area$, \
+$CellContext`area2$, $CellContext`ea$, $CellContext`eanom$, \
+$CellContext`eanom2$, $CellContext`p$}, 
+        If[$CellContext`t$$ > $CellContext`P$$, $CellContext`t$$ = \
+$CellContext`P$$]; 
+        If[$CellContext`dt$$ > $CellContext`P$$, $CellContext`dt$$ = \
+$CellContext`P$$]; $CellContext`b$ = 
+         Sqrt[(-$CellContext`a$^2) ($CellContext`e$$^2 - 
+            1)]; $CellContext`c$ = $CellContext`e$$ $CellContext`a$; \
+$CellContext`M$ = 2 Pi ($CellContext`t$$/$CellContext`P$$); $CellContext`M2$ = 
+         2 Pi (($CellContext`t$$ + $CellContext`dt$$)/$CellContext`P$$); \
+$CellContext`area$ = $CellContext`a$ $CellContext`b$ ($CellContext`M$/
+           2); $CellContext`area2$ = $CellContext`a$ $CellContext`b$ \
+($CellContext`M2$/2); $CellContext`eanom$ = Mod[
+           ReplaceAll[$CellContext`ea$, 
+            
+            FindRoot[$CellContext`M$ == $CellContext`ea$ - $CellContext`e$$ 
+              Sin[$CellContext`ea$], {$CellContext`ea$, $CellContext`M$}]], 2 
+           Pi]; $CellContext`eanom2$ = Mod[
+           ReplaceAll[$CellContext`ea$, 
+            
+            FindRoot[$CellContext`M2$ == $CellContext`ea$ - $CellContext`e$$ 
+              Sin[$CellContext`ea$], {$CellContext`ea$, $CellContext`M2$}]], 
+           2 Pi]; If[$CellContext`eanom2$ < $CellContext`eanom$, \
+$CellContext`eanom2$ = 
+          2 Pi + $CellContext`eanom2$]; $CellContext`p$ = \
+$CellContext`b$^2/$CellContext`a$; $CellContext`planet$ = {$CellContext`a$ 
+            Cos[$CellContext`eanom$] - $CellContext`c$, $CellContext`b$ 
+           Sin[$CellContext`eanom$]}; Graphics[{
+           RGBColor[0.3, 0.3, 0.7], 
+           Thickness[0.005], 
+           Polygon[
+            Join[{{0, 0}, 
+              Apply[Sequence, 
+               
+               Table[{$CellContext`a$ 
+                  Cos[$CellContext`angle] - $CellContext`c$, $CellContext`b$ 
+                 Sin[$CellContext`angle]}, {$CellContext`angle, \
+$CellContext`eanom$, $CellContext`eanom2$, 0.001}]], {0, 0}}]], 
+           RGBColor[0.05, 0.6, 1], 
+           Thickness[0.009], 
+           
+           Circle[{-$CellContext`c$, 0}, {$CellContext`a$, $CellContext`b$}, {
+            0, 2 Pi}]}, 
+          PlotRange -> {{-1.1 - $CellContext`c$, 
+             1.1 - $CellContext`c$}, {-1.1, 1.1}}, Epilog -> {
+            RGBColor[1, 0.7, 0], 
+            Disk[{0, 0}, 0.05], 
+            RGBColor[0.77, 0.29, 0.55], 
+            PointSize[0.02], 
+            Point[$CellContext`planet$]}, ImageSize -> {350, 350}, 
+          AspectRatio -> 1, Axes -> False, PlotLabel -> Row[{
+             StringJoin["area = ", 
+              ToString[
+               NumberForm[$CellContext`area2$ - $CellContext`area$, {4, 2}]], 
+              " \!\(\*SuperscriptBox[\(AU\), \(2\)]\)"]}]]], 
+      "Specifications" :> {{{$CellContext`t$$, 0, 
+          "time since perihelion (years)"}, 0, 
+         Dynamic[$CellContext`P$$], 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`e$$, 0.5, "eccentricity"}, 0, 0.9, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`P$$, 20, "orbit period (years)"}, 0.1, 50, 
+         0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`dt$$, 5, "time span (years)"}, 0.1, 
+         Dynamic[$CellContext`P$$], 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`t$$, 0, "animate time since perihelion"}, 0, 
+         Dynamic[$CellContext`P$$], 0.01, ControlType -> Trigger}}, 
+      "Options" :> {AutorunSequencing -> {1, 2, 3}, ControlPlacement -> Left},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{521., {144., 149.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.70989646627*^9},ExpressionUUID->"b7cfef5f-64bb-4377-ab33-24b3b5abd17e"]
+}, Open  ]]
+},
+WindowSize->{1920, 980},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>0.7 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 81, 0, 23, "Input", "ExpressionUUID" -> \
+"e8a0ac3a-3a74-48e8-ae89-c20f7a9523d0"],
+Cell[642, 22, 143, 2, 23, "Input", "ExpressionUUID" -> \
+"a5902bda-caa0-4ab8-961c-107fe46abc9f"],
+Cell[CellGroupData[{
+Cell[810, 28, 8845, 219, 305, "Input", "ExpressionUUID" -> \
+"356594dc-6e19-42c3-aa5a-53c2421883a5"],
+Cell[9658, 249, 6131, 117, 306, "Output", "ExpressionUUID" -> \
+"b7cfef5f-64bb-4377-ab33-24b3b5abd17e"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

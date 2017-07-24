@@ -6,28 +6,7 @@ app.directive('bindDeeThreeStuff', function($window){
 
     scope.$watch(attrs.bindDeeThreeStuff, function() {
       //d3 content starts here
-
-      
-        var svgContainer = d3.select("#test").append("svg")
-                                        .attr("width", 1000)
-                                        .attr("height",500);
-
-
-        var ellipse = svgContainer.append("path")
-                                  .attr("d", "M 100,225a 400,200 0 1,0 800,0 a 400,200 0 1,0 -800,0")
-                                  .attr("stroke", "white")
-                                  .attr("stroke-width", 3)
-                                  .attr("fill", "none");
-
-        svgContainer.append('circle').attr('r', 20)
-                                .attr('cx', 100)
-                                .attr('cy', 100)
-                                .attr('fill', 'silver')
-                                .attr('stroke', "lime")
-                                .attr('stroke-width', 1)
-
-
-
+        
         var width = 800;
         var height = 300;
         var rx = 300;
@@ -66,6 +45,55 @@ app.directive('bindDeeThreeStuff', function($window){
           // update the circle radius
           holder.selectAll("ellipse") 
             .attr("rx", nRadius);
+        }
+
+
+
+        var points = [
+          [50, 250],
+          [450, 450],
+          [850, 250],
+          [450, 50]
+        ];
+
+        var svg = d3.select("#test").append("svg")
+            .attr("width", 900)
+            .attr("height", 500);
+
+        var path = svg.append("path")
+            .data([points])
+            .attr("d", d3.svg.line()
+            .tension(.5) // Catmull–Rom
+            .interpolate("cardinal-closed"));
+
+        svg.selectAll(".point")
+            .data(points)
+            .enter().append("circle")
+            .attr("r", 4)
+            .attr("transform", function(d) { return "translate(" + d + ")"; });
+
+        var circle = svg.append("circle")
+            .attr("r", 13)
+            .attr("transform", "translate(" + points[0] + ")");
+
+        transition();
+
+        function transition() {
+          circle.transition()
+                .duration(5000)
+                .attrTween("transform", translateAlong(path.node()))
+                .each("end", transition);
+        }
+
+        // Returns an attrTween for translating along the specified path element.
+        function translateAlong(path) {
+          var l = path.getTotalLength();
+          return function(d, i, a) {
+            return function(t) {
+              var p = path.getPointAtLength(t * l);
+              return "translate(" + p.x + "," + p.y + ")";
+            };
+          };
         }
 
       //d3 content ends here
