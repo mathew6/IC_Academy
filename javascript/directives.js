@@ -12,7 +12,7 @@ app.directive('bindDeeThreeStuff', function($window){
         var rx = 300;
         var ry = 100;
 
-        var holder = d3.select("#slider")
+        var holder = d3.select("#slider", "#slider2")
               .append("svg")
               .attr("width", width)    
               .attr("height", height)
@@ -49,6 +49,16 @@ app.directive('bindDeeThreeStuff', function($window){
 
 
 
+
+
+
+
+
+
+
+
+
+
         var points = [
           [50, 250],
           [450, 450],
@@ -81,6 +91,7 @@ app.directive('bindDeeThreeStuff', function($window){
         function transition() {
           circle.transition()
                 .duration(5000)
+                .ease('linear')
                 .attrTween("transform", translateAlong(path.node()))
                 .each("end", transition);
         }

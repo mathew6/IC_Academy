@@ -3,9 +3,26 @@
 <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
         <script type="text/javascript">
             var cdf = new cdfplugin();
-            cdf.setDefaultContent('<a href="http://www.wolfram.com/cdf-player/"><img  src="test.png"></a>');
-            cdf.embed('test.cdf', 697, 478);
-        </script>
+            cdf.embed('test.cdf', 782, 427);
+</script>
+
+<div bind-dee-three-stuff="myData">
+    <div id="slider2">
+        <p>
+        <input type="range" min="100" max="300" id="nRadius">
+        </p>
+    </div>
+    <label for="nRadius" 
+        style="display: inline-block; width: 400px; text-align: left">
+        Eccentricity = <span id="nRadius-value">…</span>
+    </label>
+</div>
+
+<script type="text/javascript">
+    var cdf = new cdfplugin();
+    cdf.setDefaultContent('<a href="http://www.wolfram.com/cdf-player/"><img  src="test.png"></a>');
+    cdf.embed('test.cdf', 782, 427);
+</script>
 
 <!--Next and Back button-->
 <div id="container">

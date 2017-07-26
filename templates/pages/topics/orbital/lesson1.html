@@ -62,15 +62,17 @@
         symmetrical to the Earth just on the opposite side of the ellipse. We don't have to worry about the vacant focus but 
         it is important to understand that an ellipse is made up of two foci. The Semi-Major axis is easily remembered as the longest possible radius from the origin,
         where as the Semi-Minor axis is the shortest possible radius from the center. A circle is a special type of an ellipse where the Semi-Major and Semi-Minor axis are equal
-        to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !</p>
+        to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !
+    </p>
+    <h2><a href="https://www.khanacademy.org/computer-programming/interact-elliptical-orbits/2645257771">INTERACT: Elliptical orbits</a><script src="https://www.khanacademy.org/computer-programming/interact-elliptical-orbits/2645257771/embed.js?editor=no&buttons=no&author=no&embed=yes"></script><p>Made using: <a href="http://www.khanacademy.org/computer-programming">Khan Academy Computer Science</a></p></h2>
 
 </div>
 
 <!--Eccentricity -->
 
-<h1 class="lesson-header">Ecentricity</h1>
+<h1 class="lesson-header">Eccentricity</h1>
 
-<svg width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
+<svg class="orbit-mod" width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
 
     <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
@@ -89,8 +91,8 @@
 
 <div class="orbit-text">
 
-<h1>Ecentricity</h1>
-<p>Put stuff here</p>
+<h1>Eccentricity</h1>
+<p>Next let's take a look at Eccentricity. Review the defintions below and observe the visual above:</p>
 <table>
     <tr>
         <th>Name</th>
@@ -128,18 +130,24 @@
         <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="lime" stroke="black"/></svg></td>
     </tr>
 </table>
-    <p>Put stuff here</p>
+    <p>
+        Eccentricity defines the shape or type of conic section. It is the ratio of the distance
+        between each foci (2c) over the major axis (2a). Because the distance between the foci
+        in an ellipse is always less than the length of the ellipse (aka the major axis), its eccentricity 
+        will always be between 0 and 1. A cicrcle is a special ellipse as it has an eccentricity of 0 which makes sense 
+        because the foci are on top of each other directly in the center which makes  
+    </p>
     <div bind-dee-three-stuff="myData">
     <div id="slider">
         <p>
         <input type="range" min="100" max="300" id="nRadius">
         </p>
     </div>
-    <label for="nRadius" 
-                style="display: inline-block; width: 400px; text-align: left">
-                Eccentricity = <span id="nRadius-value">…</span>
-    </label>
-</div>
+        <label for="nRadius" 
+                    style="display: inline-block; width: 400px; text-align: left">
+                    Eccentricity = <span id="nRadius-value">…</span>
+        </label>
+    </div>
 </div>
 
 <!--Apogee, Perogee -->
