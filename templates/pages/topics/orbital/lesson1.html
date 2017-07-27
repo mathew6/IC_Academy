@@ -70,7 +70,7 @@
             <md-content style="margin: 16px; padding:16px; background-color:#94A3E3">
 
                 <md-slider-container>
-                <md-slider class="md-warn" flex min="150" max="300" ng-model="test" aria-label="red" id="red-slider">
+                <md-slider class="md-warn" flex min="150" max="350" ng-model="test" aria-label="red" id="red-slider">
                 </md-slider>
                 <md-input-container>
                 Semi-Major Axis = <input style="background-color:white;" flex type="number" ng-model="test" aria-label="Semi-Major Axis" aria-controls="red-slider">
@@ -81,16 +81,16 @@
                 <md-slider class="md-warn" flex min="50" max="150" ng-model="test1" aria-label="red" id="red-slider">
                 </md-slider>
                 <md-input-container>
-                Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider">
+                <p>Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider"></p>
                 </md-input-container>
                 </md-slider-container>
             </md-content>   
 
-            <svg height="325" width="100%">
-                <ellipse cx="575" cy="150" rx={{test}} ry={{test1}} style="fill:black;stroke:white;stroke-width:2"/>
+            <svg height="350" width="100%">
+                <ellipse cx="575" cy="150" rx="{{test}}" ry="{{test1}}" style="fill:black;stroke:white;stroke-width:2"/>
                 <line x1="{{redLine + test}}" y1="150" x2="575" y2="150" style="stroke:rgb(255,0,0);stroke-width:2" />
                 <line x1="575" y1="{{blueLine + test1}}" x2="575" y2="150" style="stroke:rgb(0,0,255);stroke-width:2" />
-                <circle cx="575" cy="150" r="5" fill="orange" stroke="black" />
+                <circle cx="575" cy="150" r="5" fill="orange" stroke="black"/>
             </svg>
         </div>
 </div>
