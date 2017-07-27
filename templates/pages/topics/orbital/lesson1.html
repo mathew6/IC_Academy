@@ -64,8 +64,35 @@
         where as the Semi-Minor axis is the shortest possible radius from the center. A circle is a special type of an ellipse where the Semi-Major and Semi-Minor axis are equal
         to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !
     </p>
-    <h2><a href="https://www.khanacademy.org/computer-programming/interact-elliptical-orbits/2645257771">INTERACT: Elliptical orbits</a><script src="https://www.khanacademy.org/computer-programming/interact-elliptical-orbits/2645257771/embed.js?editor=no&buttons=no&author=no&embed=yes"></script><p>Made using: <a href="http://www.khanacademy.org/computer-programming">Khan Academy Computer Science</a></p></h2>
+    
+    <div ng-controller="sliderController" ng-cloak>
+       
+            <md-content style="margin: 16px; padding:16px; background-color:#94A3E3">
 
+                <md-slider-container>
+                <md-slider class="md-warn" flex min="150" max="300" ng-model="test" aria-label="red" id="red-slider">
+                </md-slider>
+                <md-input-container>
+                Semi-Major Axis = <input style="background-color:white;" flex type="number" ng-model="test" aria-label="Semi-Major Axis" aria-controls="red-slider">
+                </md-input-container>
+                </md-slider-container>
+
+                <md-slider-container>
+                <md-slider class="md-warn" flex min="50" max="150" ng-model="test1" aria-label="red" id="red-slider">
+                </md-slider>
+                <md-input-container>
+                Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider">
+                </md-input-container>
+                </md-slider-container>
+            </md-content>   
+
+            <svg height="325" width="100%">
+                <ellipse cx="575" cy="150" rx={{test}} ry={{test1}} style="fill:black;stroke:white;stroke-width:2"/>
+                <line x1="{{redLine + test}}" y1="150" x2="575" y2="150" style="stroke:rgb(255,0,0);stroke-width:2" />
+                <line x1="575" y1="{{blueLine + test1}}" x2="575" y2="150" style="stroke:rgb(0,0,255);stroke-width:2" />
+                <circle cx="575" cy="150" r="5" fill="orange" stroke="black" />
+            </svg>
+        </div>
 </div>
 
 <!--Eccentricity -->
@@ -91,63 +118,52 @@
 
 <div class="orbit-text">
 
-<h1>Eccentricity</h1>
-<p>Next let's take a look at Eccentricity. Review the defintions below and observe the visual above:</p>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Definition</th>
-        <th>Key</th>
-    </tr>
-    <tr>
-        <td>Eccentricity</td>
-        <td>The distance between eithier foci and the origin divided by the semi-major axis.</td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></svg></td>
-    </tr>
-    <tr>
-        <td>Origin</td>
-        <td>Center point of ellipses.</td>
-        <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="orange" stroke="black"/></svg></td>
-    </tr>
-    <tr>
-        <td>Foci</td>
-        <td>Two fixed points on the interior of an ellipse used in the formal definition of the curve.</td>
-        <td><svg width="100" height="50"><image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="30" y="8" height="40" width="40"/></svg></td>
-    </tr>
-    <tr>
-        <td>Semi-Major Axis</td>
-        <td>The radius of an orbit at the orbit's two most distant points</td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(255,0,0);stroke-width:2"/></svg></td>
-    </tr>
-    <tr>
-        <td>Semi-Minor Axis</td>
-        <td>The radius of an orbit at the orbit's two nearest points</td>
-        <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(0,0,255);stroke-width:2"/></svg></td>
-    </tr>
-    <tr>
-        <td>Satellite</td>
-        <td>The object orbiting Earth in an elliptical path.</td>
-        <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="lime" stroke="black"/></svg></td>
-    </tr>
-</table>
+    <h1>Eccentricity</h1>
+    <p>Next let's take a look at Eccentricity. Review the defintions below and observe the visual above:</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Definition</th>
+            <th>Key</th>
+        </tr>
+        <tr>
+            <td>Eccentricity</td>
+            <td>The distance between eithier foci and the origin divided by the semi-major axis.</td>
+            <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:purple;stroke-width:2"/></svg></td>
+        </tr>
+        <tr>
+            <td>Origin</td>
+            <td>Center point of ellipses.</td>
+            <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="orange" stroke="black"/></svg></td>
+        </tr>
+        <tr>
+            <td>Foci</td>
+            <td>Two fixed points on the interior of an ellipse used in the formal definition of the curve.</td>
+            <td><svg width="100" height="50"><image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="30" y="8" height="40" width="40"/></svg></td>
+        </tr>
+        <tr>
+            <td>Semi-Major Axis</td>
+            <td>The radius of an orbit at the orbit's two most distant points</td>
+            <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(255,0,0);stroke-width:2"/></svg></td>
+        </tr>
+        <tr>
+            <td>Semi-Minor Axis</td>
+            <td>The radius of an orbit at the orbit's two nearest points</td>
+            <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(0,0,255);stroke-width:2"/></svg></td>
+        </tr>
+        <tr>
+            <td>Satellite</td>
+            <td>The object orbiting Earth in an elliptical path.</td>
+            <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="lime" stroke="black"/></svg></td>
+        </tr>
+    </table>
     <p>
-        Eccentricity defines the shape or type of conic section. It is the ratio of the distance
-        between each foci (2c) over the major axis (2a). Because the distance between the foci
-        in an ellipse is always less than the length of the ellipse (aka the major axis), its eccentricity 
-        will always be between 0 and 1. A cicrcle is a special ellipse as it has an eccentricity of 0 which makes sense 
-        because the foci are on top of each other directly in the center which makes  
-    </p>
-    <div bind-dee-three-stuff="myData">
-    <div id="slider">
-        <p>
-        <input type="range" min="100" max="300" id="nRadius">
-        </p>
-    </div>
-        <label for="nRadius" 
-                    style="display: inline-block; width: 400px; text-align: left">
-                    Eccentricity = <span id="nRadius-value">…</span>
-        </label>
-    </div>
+            Eccentricity defines the shape or type of conic section. It is the ratio of the distance
+            between each foci (2c) over the major axis (2a). Because the distance between the foci
+            in an ellipse is always less than the length of the ellipse (aka the major axis), its eccentricity 
+            will always be between 0 and 1. A cicrcle is a special ellipse as it has an eccentricity of 0 which makes sense 
+            because the foci are on top of each other directly in the center which makes  
+    </p>    
 </div>
 
 <!--Apogee, Perogee -->

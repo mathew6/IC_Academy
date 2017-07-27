@@ -6,58 +6,6 @@ app.directive('bindDeeThreeStuff', function($window){
 
     scope.$watch(attrs.bindDeeThreeStuff, function() {
       //d3 content starts here
-        
-        var width = 800;
-        var height = 300;
-        var rx = 300;
-        var ry = 100;
-
-        var holder = d3.select("#slider", "#slider2")
-              .append("svg")
-              .attr("width", width)    
-              .attr("height", height)
-              .style("padding-left", 20); 
-
-        // draw the circle
-        holder.append("ellipse")
-          .attr("cx", 300)
-          .attr("cy", 150) 
-          .style("fill", "none")   
-          .style("stroke", "black")
-          .attr("rx", rx)
-          .attr("ry", ry)
-
-        // when the input range changes update the circle 
-        d3.select("#nRadius").on("input", function() {
-          update(+this.value);
-        });
-
-        // Initial starting radius of the circle 
-        update(200);
-
-        // update the elements
-        function update(nRadius) {
-
-          // adjust the text on the range slider
-          d3.select("#nRadius-value").text((Math.sqrt(nRadius)* 10)/rx);
-          d3.select("#nRadius").property("value", nRadius);
-
-          // update the circle radius
-          holder.selectAll("ellipse") 
-            .attr("rx", nRadius);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
 
         var points = [
           [50, 250],

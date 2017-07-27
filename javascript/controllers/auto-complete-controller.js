@@ -10,10 +10,12 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            self.querySearch   = querySearch;
            self.selectedItemChange = selectedItemChange;
            self.searchTextChange   = searchTextChange;
-           self.topicLinkObj = {"Orbital Mechanics" : "#!/topics/orbital",
-                            "Satellite" : "#!/topics/satellites", 
-                            "Kepler" : "#!/topics/kepler",
-                            "Trigonometry" : "#!/topics/trigonometry"};
+           self.topicLinkObj = {
+                                "Orbital Mechanics" : "#!/topics/orbital",
+                                "Satellite" : "#!/topics/satellites", 
+                                "Kepler" : "#!/topics/kepler",
+                                "Trigonometry" : "#!/topics/trigonometry"
+                                };
            addTopicsToTab();
 
            // search for topic searched by user

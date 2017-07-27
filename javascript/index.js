@@ -44,7 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })    
     .state('orbital.Lesson5', {
         url: '/lesson5',
-        templateUrl: 'templates/pages/topics/orbital/lesson5.html'
+        templateUrl: 'templates/pages/topics/orbital/lesson5.html',
     })       
     .state('orbital.Lesson6', {
         url: '/lesson6',
