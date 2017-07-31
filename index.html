@@ -19,18 +19,18 @@
     <script src='javascript/controllers/d3-controller.js'></script>
     <script src="javascript/directives.js"></script>
     <script src="javascript/controllers/slider-controller.js"></script>
-    <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+    <script src="javascript/controllers/practice-controller.js"></script>
+    
     <title>IC Academy</title>
 </head>
-<body ng-app="firstApplication">
-        <ul id="nav-bar-ul">
-            <li class="nav-bar-li"><a ui-sref="home">Home</a></li>
-            <li class="nav-bar-li"><a ui-sref="topics">Topics</a></li>
-            <li class="nav-bar-li"><a ui-sref="videos">Videos</a></li>
-            <li class="nav-bar-li"><a ui-sref="about">About</a></li>
-        </ul>
+    <body ng-app="firstApplication">
+            <ul id="nav-bar-ul">
+                <li class="nav-bar-li"><a ui-sref="home">Home</a></li>
+                <li class="nav-bar-li"><a ui-sref="topics">Topics</a></li>
+                <li class="nav-bar-li"><a ui-sref="videos">Videos</a></li>
+                <li class="nav-bar-li"><a ui-sref="about">About</a></li>
+            </ul>
 
-
-        <div ui-view></div>
-</body>
+            <div ui-view></div>
+    </body>
 </html>

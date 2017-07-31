@@ -65,9 +65,9 @@
         to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !
     </p>
     
-    <div ng-controller="sliderController" ng-cloak>
+    <div ng-controller="sliderController as slider" ng-cloak>
        
-            <md-content style="margin: 16px; padding:16px; background-color:#94A3E3">
+            <md-content style="margin: 16px; padding:20px; background-color:#94A3E3">
 
                 <md-slider-container>
                 <md-slider class="md-warn" flex min="150" max="350" ng-model="test" aria-label="red" id="red-slider">
@@ -81,7 +81,7 @@
                 <md-slider class="md-warn" flex min="50" max="150" ng-model="test1" aria-label="red" id="red-slider">
                 </md-slider>
                 <md-input-container>
-                <p>Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider"></p>
+                Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider">
                 </md-input-container>
                 </md-slider-container>
             </md-content>   
