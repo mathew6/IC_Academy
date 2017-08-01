@@ -1,5 +1,5 @@
 angular.module('firstApplication').controller('headerController', headerController);
-        // header controller for nav bar functionality
+
         function headerController ($log) {
             var self = this;
             self.tabName = 'Home'; // set default tabName to "Home"

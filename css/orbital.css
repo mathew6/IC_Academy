@@ -9,6 +9,18 @@
     color: whitesmoke;
     padding-left: 25px;
 }
+
+#cover-image {
+    position:absolute;
+    opacity:0.5;
+    left:50%;
+    top:25%;
+    width:400px;
+    height:400px;
+    margin-left:-25px;
+    margin-top:-25px;
+    z-index:100;
+}
     
 iframe {
 	position: absolute;
@@ -76,7 +88,7 @@ p {
 
 .orbit-text {
     color: black;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     background-color: #94A3E3;
     padding: 10px 40px;
     margin: 10px 150px;
@@ -131,6 +143,31 @@ table, th {
     background-color: orangered;
     border-color: black;
     color: white;
+}
+
+.hint-container, .practice-container {
+    display:inline; 
+}
+
+.hint-link {
+    padding: 5px;
+    margin: 10px;
+    display: inline-block;
+    background-color: blueviolet;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 8pt;
+    border-color: blueviolet;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.next-to {
+    display: inline-block;
 }
 
 input[type=range] {

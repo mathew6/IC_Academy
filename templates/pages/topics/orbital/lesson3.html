@@ -1,6 +1,22 @@
 <h1 class="lesson-header">Practice</h1>
-<div ng-controller="practiceController as practice">
-    
+
+<div class="orbit-text" ng-controller="practiceController as practice">
+    <div ng-repeat="info in exercises">
+        <div class="practice-content">
+            <p>{{info.question}}</p>
+            <form>
+                <input type="text" id="answer" name="answer" autocomplete="off" style="margin-left:15px">
+                <input type="submit" value="Check" ng-click="checkAnswer()">
+            </form>
+            <p>{{info.result}}</p>
+        </div>
+        <div class="hint-container">
+            <button class="hint-link" ng-click="hint()">{{showHideStatus}}</button>
+            <div ng-show="hint1" class="next-to">
+                <p>{{info.hint1}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--Next and Back button-->
