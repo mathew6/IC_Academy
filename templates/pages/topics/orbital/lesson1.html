@@ -64,35 +64,6 @@
         where as the Semi-Minor axis is the shortest possible radius from the center. A circle is a special type of an ellipse where the Semi-Major and Semi-Minor axis are equal
         to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !
     </p>
-    
-    <div ng-controller="sliderController as slider" ng-cloak>
-       
-            <md-content style="margin: 16px; padding:20px; background-color:#94A3E3">
-
-                <md-slider-container>
-                <md-slider class="md-warn" flex min="150" max="350" ng-model="test" aria-label="red" id="red-slider">
-                </md-slider>
-                <md-input-container>
-                Semi-Major Axis = <input style="background-color:white;" flex type="number" ng-model="test" aria-label="Semi-Major Axis" aria-controls="red-slider">
-                </md-input-container>
-                </md-slider-container>
-
-                <md-slider-container>
-                <md-slider class="md-warn" flex min="50" max="150" ng-model="test1" aria-label="red" id="red-slider">
-                </md-slider>
-                <md-input-container>
-                Semi-Minor Axis = <input style="background-color:white;" flex type="number" ng-model="test1" aria-label="Semi-Major Axis" aria-controls="red-slider">
-                </md-input-container>
-                </md-slider-container>
-            </md-content>   
-
-            <svg height="350" width="100%">
-                <ellipse cx="575" cy="150" rx="{{test}}" ry="{{test1}}" style="fill:black;stroke:white;stroke-width:2"/>
-                <line x1="{{redLine + test}}" y1="150" x2="575" y2="150" style="stroke:rgb(255,0,0);stroke-width:2" />
-                <line x1="575" y1="{{blueLine + test1}}" x2="575" y2="150" style="stroke:rgb(0,0,255);stroke-width:2" />
-                <circle cx="575" cy="150" r="5" fill="orange" stroke="black"/>
-            </svg>
-        </div>
 </div>
 
 <!--Eccentricity -->
@@ -172,7 +143,7 @@
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
 
     <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
-        <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
+        <animateMotion begin="0s" dur="1s" repeatCount="indefinite" >
             <mpath xlink:href="#orbit"/>
         </animateMotion>
     </circle>
@@ -224,6 +195,18 @@
     </p>
 </div>
 
+<h1 class="lesson-header">Inclination</h1>
+<img class="lesson-image" src="https://earthobservatory.nasa.gov/Features/OrbitsCatalog/images/orbital_inclination.png">
+<div class="orbit-text">
+    <h1>Inclination</h1>
+    <p>This is where information on inclination will go (and hopefully some sort of <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">interactive diagram</a>.</p>
+    <ol>
+        <li>I'm</li>
+        <li>so</li>
+        <li>bored</li>
+    </ol>
+</div>
+
 
 <!-- Next and preivous button -->
 <div id="container">
@@ -231,3 +214,6 @@
         <button>Next: Kepler's Laws</button>
     </form>
 </div>
+
+
+

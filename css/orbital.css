@@ -1,42 +1,32 @@
 #orbital-page {
     background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/857/full/tileable-classic-nebula-space-patterns-6.jpg');
     padding-bottom: 260px;
-    padding-top: 25px;
-    
 }
 
-#orbital-head{
-    color: whitesmoke;
-    padding-left: 25px;
+#orbits-intro {
+    background: none;
 }
 
 #cover-image {
-    position:absolute;
-    opacity:0.5;
-    left:50%;
-    top:25%;
-    width:400px;
-    height:400px;
-    margin-left:-25px;
-    margin-top:-25px;
+    opacity:0.98;
+	width: 900px;
+	height: 500px;
     z-index:100;
 }
-    
+
 iframe {
-	position: absolute;
-	top: 150px;
-	left: 400px;
-	width: 1117.5px;
-	height: 325px;
+	width: 1010px;
+	height: 400px;
+    padding-left: 40px;
 }
 
 .side-bar{
-    width: 600px;
-    margin-left: 0px;
-    
+    width: 400px;
+    padding: 20px;
+    background-color: black;
 }
 
-#side-bar-list{
+.side-bar-list{
     text-align: center;
     list-style-type: none;
     line-height: 50px;
@@ -44,21 +34,19 @@ iframe {
     font-size: 15pt;
     color: black;
     border-color: #94A3E3;
-    width: 350px;
     margin-left: 0px;
     margin-bottom: 2.5px;
 }
 
-#side-bar-list:hover {
+.side-bar-list:hover {
     background-color: orangered;
     border-color: black;
     color: white;
 }
 
-#blah button {
+.side-bar button {
     background-color: #94A3E3;
     width: 400px;
-    margin-left: -40px;
     border-radius: 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -76,6 +64,12 @@ iframe {
     text-align: center;
     border: 5px solid black;
     border-radius: 40px;
+}
+
+.lesson-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -168,104 +162,6 @@ table, th {
 
 .next-to {
     display: inline-block;
-}
-
-input[type=range] {
-  -webkit-appearance: none;
-  margin: 18px 0;
-  width: 600px;
-}
-
-input[type=range]:focus {
-  outline: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  width: 400px;
-  height: 5px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: white;
-  border-radius: 1.3px;
-  border: 0.2px solid white;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 25px;
-  width: 25px;
-  border-radius: 100%;
-  background: #ffffff;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -11px;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: white;
-}
-
-input[type=range]::-moz-range-track {
-  width: 400px;
-  height: 8.4px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: white;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-
-input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  border-width: 8px 0;
-  color: transparent;
-}
-
-input[type=range]::-ms-fill-lower {
-  background: white;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-input[type=range]::-ms-fill-upper {
-  background: white;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-  background: white;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-  background: white;
 }
 
 #slider {

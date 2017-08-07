@@ -1,23 +1,47 @@
 <h1 class="lesson-header">Practice</h1>
-
-<div class="orbit-text" ng-controller="practiceController as practice">
-    <div ng-repeat="info in exercises">
-        <div class="practice-content">
-            <p>{{info.question}}</p>
-            <form>
-                <input type="text" id="answer" name="answer" autocomplete="off" style="margin-left:15px">
-                <input type="submit" value="Check" ng-click="checkAnswer()">
-            </form>
-            <p>{{info.result}}</p>
-        </div>
-        <div class="hint-container">
-            <button class="hint-link" ng-click="hint()">{{showHideStatus}}</button>
-            <div ng-show="hint1" class="next-to">
-                <p>{{info.hint1}}</p>
+    <div class="orbit-text" ng-controller="practiceController as practice">
+        <h1>Exercises</h1>
+        <div ng-repeat="info in exercises">
+            <div class="practice-content" ng-style="styleResult(info.problem)">
+                <p>{{info.question}}</p>
+                <form>
+                    <input type="text" ng-attr-id="{{info.problem}}" name="answer" autocomplete="off" style="margin-left:15px">
+                    <input type="submit" value="Check" ng-click="checkAnswer(info.problem)">
+                </form>
+                <p>{{info.result}}</p>
+            </div>
+            <div class="hint-container">
+                <button class="hint-link" ng-click="hint(info.problem)">{{buttonShowHideStatus}}</button>
+                <div ng-show="hintBoolean" class="next-to">
+                    <p ng-attr-id="{{info.problem}}">{{info.hint1}}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="orbit-text">
+        <h1>Sample Quiz</h1>
+        <quiz/>
+    </div>
+
+    <div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
+        <h1>Interactive problem</h1>
+        <div bind-Dee-Three-Stuff="myData">
+            <div id="test"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--Next and Back button-->
 <div id="container">

@@ -1,21 +1,24 @@
 <div id="orbital-page">
     <link rel="stylesheet" href="css/orbital.css">
-    <h2 id='orbital-head'><strong>Orbital Mechanics</strong></h2>
 
-    <div class='side-bar'>
-        <ul id="blah">
-            <a ui-sref="orbital.Lesson1"><button id="side-bar-list"><li>Lesson 1: Orbital Geometry</li></button></a>
-            <a ui-sref="orbital.Lesson2"><button id="side-bar-list"><li>Lesson 2: Keplar's Laws</li></button></a>
-            <a ui-sref="orbital.Lesson3"><button id="side-bar-list"><li>Practice</li></button></a>
-            <a ui-sref="orbital.Lesson4"><button id="side-bar-list"><li>Lesson 4: Low Earth Orbits</li></button></a>
-            <a ui-sref="orbital.Lesson5"><button id="side-bar-list"><li>Lesson 5: Highly Eliptical Orbits</li></button></a>
-            <a ui-sref="orbital.Lesson6"><button id="side-bar-list"><li>Lesson 6: Geo-Stationary Orbits</li></button></a>
-        </ul>
+    <div id="orbits-intro" class="next-to">
+        <!--<div class='side-bar'>-->
+            <ul class="side-bar next-to">
+                <a ui-sref="orbital.Lesson1"><button class="side-bar-list"><li>Lesson 1: Orbital Geometry</li></button></a>
+                <a ui-sref="orbital.Lesson2"><button class="side-bar-list"><li>Lesson 2: Keplar's Laws</li></button></a>
+                <a ui-sref="orbital.Lesson3"><button class="side-bar-list"><li>Practice</li></button></a>
+                <a ui-sref="orbital.Lesson4"><button class="side-bar-list"><li>Lesson 3: Low Earth Orbits</li></button></a>
+                <a ui-sref="orbital.Lesson5"><button class="side-bar-list"><li>Lesson 4: Highly Eliptical Orbits</li></button></a>
+                <a ui-sref="orbital.Lesson6"><button class="side-bar-list"><li>Lesson 5: Geo-Stationary Orbits</li></button></a>
+            </ul>
+        <!--</div>-->
+
+            <!--<img id="cover-image" onclick="this.style.display='none';" src="https://scijinks.gov/review/orbit/geo.gif"></img>-->
+            <iframe class="next-to" src="https://www.youtube.com/embed/tJiAkBxuqfs"
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
     </div>
-        <img id="cover-image" src="http://www.google.com/images/srpr/logo4w.png" onclick="this.style.display='none';"/>
-        <iframe src="https://www.youtube.com/embed/tJiAkBxuqfs"
-                frameborder="0" 
-                allowfullscreen>
-        </iframe>
+           
     <div ui-view></div>
 </div>

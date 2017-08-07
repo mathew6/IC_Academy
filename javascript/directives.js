@@ -22,17 +22,22 @@ app.directive('bindDeeThreeStuff', function($window){
             .data([points])
             .attr("d", d3.svg.line()
             .tension(.5) // Catmull–Rom
-            .interpolate("cardinal-closed"));
+            .interpolate("cardinal-closed"))
+            .style('stroke', 'white')
+            .style('stroke-width', 3)
+            .style('fill', 'none');
 
         svg.selectAll(".point")
             .data(points)
             .enter().append("circle")
-            .attr("r", 4)
-            .attr("transform", function(d) { return "translate(" + d + ")"; });
+            .attr("r", .5)
+            .attr("transform", function(d) { return "translate(" + d + ")"; })
+            .style('fill', 'white');
 
         var circle = svg.append("circle")
             .attr("r", 13)
-            .attr("transform", "translate(" + points[0] + ")");
+            .attr("transform", "translate(" + points[0] + ")")
+            .style('fill','orangered');
 
         transition();
 
