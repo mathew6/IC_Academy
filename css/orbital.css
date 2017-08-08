@@ -70,6 +70,8 @@ iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 1px white;
+    border-radius: 100px;
 }
 
 h1 {
@@ -167,4 +169,10 @@ table, th {
 #slider {
     display: block;
     margin-left: 320px;
+}
+
+.hint1 {
+    border: 2px solid blueviolet;
+    padding: 10px;
+    background-color: white;
 }

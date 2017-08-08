@@ -1,48 +1,47 @@
 <h1 class="lesson-header">Practice</h1>
-    <div class="orbit-text" ng-controller="practiceController as practice">
-        <h1>Exercises</h1>
-        <div ng-repeat="info in exercises">
-            <div class="practice-content" ng-style="styleResult(info.problem)">
+<!--Free Response Quiz-->
+<div class="orbit-text" ng-controller="practiceController as practice">
+    <h1>Exercises</h1>
+    <div ng-repeat="info in exercises">
+        <div ng-style="checkAnswer(info.problem)">
+            <div class="practice-content">
                 <p>{{info.question}}</p>
                 <form>
                     <input type="text" ng-attr-id="{{info.problem}}" name="answer" autocomplete="off" style="margin-left:15px">
-                    <input type="submit" value="Check" ng-click="checkAnswer(info.problem)">
+                    <input type="submit" value="Check" ng-click="checkAnswer(info.problem); numberOfSubmits(info)">
                 </form>
                 <p>{{info.result}}</p>
             </div>
+            <p ng-show="countBool">{{attemptStatus}}</p>
             <div class="hint-container">
-                <button class="hint-link" ng-click="hint(info.problem)">{{buttonShowHideStatus}}</button>
-                <div ng-show="hintBoolean" class="next-to">
-                    <p ng-attr-id="{{info.problem}}">{{info.hint1}}</p>
-                </div>
+              <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
+              <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>
             </div>
         </div>
+        <hr>
     </div>
-
-    <div class="orbit-text">
-        <h1>Sample Quiz</h1>
-        <quiz/>
-    </div>
-
-    <div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
-        <h1>Interactive problem</h1>
-        <div bind-Dee-Three-Stuff="myData">
-            <div id="test"></div>
+</div>
+<!--Multiple Choice Quiz-->
+<div class="orbit-text" ng-controller="practiceController as practice">
+    <h1>Sample Quiz</h1>
+    <form ng-submit="submit()">
+        <div ng-repeat="q in multipleChoiceQuestions">
+            <p>Selected Value: <span class="radioValue">{{ selected }}</span> </p>
+            <p>{{q.question}}</p>
+            <md-radio-group ng-model="selected">
+                <md-radio-button ng-repeat="d in q" ng-value="d.value" aria-label="{{d.label}}">{{d.label}}</md-radio-button>
+            </md-radio-group>
+            <hr>
         </div>
+    </form>   
+</div>
+<!--Interactive Quiz-->
+<div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
+    <h1>Interactive problem</h1>
+    <div bind-Dee-Three-Stuff="myData">
+        <div id="test"></div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 <!--Next and Back button-->
 <div id="container">
     <form class="lesson-nav-buttons" action="#!/topics/orbital/lesson2">
