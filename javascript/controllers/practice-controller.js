@@ -46,7 +46,7 @@ function practiceController($scope, $log) {
                 else if (document.getElementById(exerObj.answerId).value) {
                     exerObj.count++;
                     var attemptsLeft = 3 - exerObj.count;
-                    if (exerObj.count > 3) {
+                    if (exerObj.count > 2) {
                         exerObj.attemptStatus = "You are out of attempts. Move to the next exercise.";
                         exerObj.disable = true;
                     }
