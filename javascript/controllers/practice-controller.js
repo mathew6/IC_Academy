@@ -1,12 +1,10 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
-        
-        $scope.hintBool = false;        
+
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
-                exerObj.hideBool = false;
-                $log.info(exerObj.hideBool);
+                exerObj.hintBool = !exerObj.hintBool;
             }
         };
 
@@ -65,7 +63,6 @@ function practiceController($scope, $log) {
             question: 'What is 20 + 20?',
             hint1: "It's 40",
             hintBool: true,
-            hideBool: true,
             attemptStatus: '',
             count: 0,
             answer: '40',
@@ -78,7 +75,6 @@ function practiceController($scope, $log) {
             question: 'The square of the orbital period of a planet is directly proportional to the cube of the semi-major axis of its orbit describes which of Keplers Laws? (enter an integer)',
             hint1: "It's Keplers 3rd Law",
             hintBool: true,
-            hideBool: true,
             count: 0,
             attemptStatus: '',
             answer: '3',
@@ -91,7 +87,6 @@ function practiceController($scope, $log) {
             question: 'How sassy is Cam?',
             hint1: 'Emily is gone sooooo',
             hintBool: true,
-            hideBool: true,
             count: 0,
             attemptStatus: '',
             answer: 'His sass level is over 9000',
@@ -104,7 +99,6 @@ function practiceController($scope, $log) {
             question: 'True or False: Bridget is doing work.',
             hint1: "She's not",
             hintBool: true,
-            hideBool: true,
             attemptStatus: '',
             answer: 'False',
             result: "",
@@ -116,7 +110,6 @@ function practiceController($scope, $log) {
             question: 'Who am I? Who am I?',
             hint1: '24601',
             hintBool: true,
-            hideBool: true,
             count: 0,
             attemptStatus: '',
             answer: 'Jean Valjean',
