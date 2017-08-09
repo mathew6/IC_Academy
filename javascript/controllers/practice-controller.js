@@ -25,7 +25,7 @@ function practiceController($scope, $log) {
                 exerObj.style = {
                     "background-color" : "pink",
                     "border" : "2px solid red"
-                }   
+                }
             }
             return  exerObj.style;
         };
