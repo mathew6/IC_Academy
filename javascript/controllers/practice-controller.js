@@ -31,10 +31,7 @@ function practiceController($scope, $log) {
         };
 
         var answerIsRight = function(exerObj) {
-            if (document.getElementById(exerObj.answerId).value === exerObj.answer) {
-                return true;
-            }
-            return false;
+            return document.getElementById(exerObj.answerId).value === exerObj.answer;
         }
 
         $scope.test = function() {
