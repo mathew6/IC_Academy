@@ -1,6 +1,6 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
-
+        $scope.attemptStatus = "";
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
@@ -27,7 +27,7 @@ function practiceController($scope, $log) {
             return  exerObj.style;
         };
 
-        var answerIsRight = function(exerObj){
+        var answerIsRight = function(exerObj) {
             if (document.getElementById(exerObj.answerId).value === exerObj.answer) {
                 return true;
             }
@@ -39,19 +39,21 @@ function practiceController($scope, $log) {
         }
         
         $scope.numberOfAnswerSubmits = function(exerObj) {
+                // check if the answer is correct
                 if (answerIsRight(exerObj)) {
-                    exerObj.attemptStatus = "";
+                    $scope.attemptStatus = "";
                 }
+                // check if there is a value in the input box
                 else if (document.getElementById(exerObj.answerId).value) {
                     exerObj.count++;
-                    exerObj.attemptsLeft = 3 - exerObj.count;
-                    if (exerObj.count >= 1) {
-                        exerObj.attemptStatus = "You have tried " + exerObj.count 
-                        + " times. You have " + exerObj.attemptsLeft + " attempts left."; 
-                    }
+                    var attemptsLeft = 3 - exerObj.count;
                     if (exerObj.count > 3) {
-                        exerObj.attemptStatus = "You are out of attempts. Move to the next exercise.";
+                        $scope.attemptStatus = "You are out of attempts. Move to the next exercise.";
                         $scope.disable = true;
+                    }
+                    else if (exerObj.count >= 1) {
+                        $scope.attemptStatus = "You have tried " + exerObj.count +
+                                                " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
         }
@@ -63,7 +65,6 @@ function practiceController($scope, $log) {
             question: 'What is 20 + 20?',
             hint1: "It's 40",
             hintBool: true,
-            attemptStatus: '',
             count: 0,
             answer: '40',
             result: "",
@@ -76,7 +77,6 @@ function practiceController($scope, $log) {
             hint1: "It's Keplers 3rd Law",
             hintBool: true,
             count: 0,
-            attemptStatus: '',
             answer: '3',
             result: "",
             style: {}},
@@ -88,7 +88,6 @@ function practiceController($scope, $log) {
             hint1: 'Emily is gone sooooo',
             hintBool: true,
             count: 0,
-            attemptStatus: '',
             answer: 'His sass level is over 9000',
             result: "",
             style: {}},
@@ -99,7 +98,6 @@ function practiceController($scope, $log) {
             question: 'True or False: Bridget is doing work.',
             hint1: "She's not",
             hintBool: true,
-            attemptStatus: '',
             answer: 'False',
             result: "",
             style: {}},
@@ -111,7 +109,6 @@ function practiceController($scope, $log) {
             hint1: '24601',
             hintBool: true,
             count: 0,
-            attemptStatus: '',
             answer: 'Jean Valjean',
             result: "",
             style: {}},
