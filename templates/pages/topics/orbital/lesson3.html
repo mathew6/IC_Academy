@@ -7,8 +7,8 @@
         <div class="exersise-left-side next-to" ng-style="checkAnswer(info)" style="padding-bottom: 25px;">
                 <p>{{info.question}}</p>
                 <form style="padding: 10px 25px;">
-                    <input ng-disabled="disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
-                    <input ng-disabled="disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
+                    <input ng-disabled="info.disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
+                    <input ng-disabled="info.disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
                 </form>
                 <p>{{info.result}}</p>
                 <p>{{attemptStatus}}</p>

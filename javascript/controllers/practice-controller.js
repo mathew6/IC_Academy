@@ -49,7 +49,7 @@ function practiceController($scope, $log) {
                     var attemptsLeft = 3 - exerObj.count;
                     if (exerObj.count > 3) {
                         $scope.attemptStatus = "You are out of attempts. Move to the next exercise.";
-                        $scope.disable = true;
+                        exerObj.disable = true;
                     }
                     else if (exerObj.count >= 1) {
                         $scope.attemptStatus = "You have tried " + exerObj.count +
@@ -68,7 +68,8 @@ function practiceController($scope, $log) {
             count: 0,
             answer: '40',
             result: "",
-            style: {}},
+            style: {},
+            disable: false},
 
             {problem: 2,
             answerId: "problemTwo",
@@ -79,7 +80,8 @@ function practiceController($scope, $log) {
             count: 0,
             answer: '3',
             result: "",
-            style: {}},
+            style: {},
+            disable: false},
 
             {problem: 3,
             answerId: "problemThree",
@@ -90,7 +92,8 @@ function practiceController($scope, $log) {
             count: 0,
             answer: 'His sass level is over 9000',
             result: "",
-            style: {}},
+            style: {},
+            disable: false},
 
             {problem: 4,
             answerId: "problemFour",
@@ -100,7 +103,8 @@ function practiceController($scope, $log) {
             hintBool: true,
             answer: 'False',
             result: "",
-            style: {}},
+            style: {},
+            disable: false},
 
             {problem: 5,
             answerId: "problemFive",
@@ -111,7 +115,8 @@ function practiceController($scope, $log) {
             count: 0,
             answer: 'Jean Valjean',
             result: "",
-            style: {}},
+            style: {},
+            disable: false},
     ];
 
     $scope.multipleChoiceQuestions = [
