@@ -1,6 +1,5 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
-        $scope.attemptStatus = "";
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
@@ -41,18 +40,18 @@ function practiceController($scope, $log) {
         $scope.numberOfAnswerSubmits = function(exerObj) {
                 // check if the answer is correct
                 if (answerIsRight(exerObj)) {
-                    $scope.attemptStatus = "";
+                    exerObj.attemptStatus = "";
                 }
                 // check if there is a value in the input box
                 else if (document.getElementById(exerObj.answerId).value) {
                     exerObj.count++;
                     var attemptsLeft = 3 - exerObj.count;
                     if (exerObj.count > 3) {
-                        $scope.attemptStatus = "You are out of attempts. Move to the next exercise.";
+                        exerObj.attemptStatus = "You are out of attempts. Move to the next exercise.";
                         exerObj.disable = true;
                     }
                     else if (exerObj.count >= 1) {
-                        $scope.attemptStatus = "You have tried " + exerObj.count +
+                        exerObj.attemptStatus = "You have tried " + exerObj.count +
                                                 " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
@@ -66,6 +65,7 @@ function practiceController($scope, $log) {
             hint1: "It's 40",
             hintBool: true,
             count: 0,
+            attemptStatus: "",
             answer: '40',
             result: "",
             style: {},
@@ -78,6 +78,7 @@ function practiceController($scope, $log) {
             hint1: "It's Keplers 3rd Law",
             hintBool: true,
             count: 0,
+            attemptStatus: "",
             answer: '3',
             result: "",
             style: {},
@@ -90,6 +91,7 @@ function practiceController($scope, $log) {
             hint1: 'Emily is gone sooooo',
             hintBool: true,
             count: 0,
+            attemptStatus: "",
             answer: 'His sass level is over 9000',
             result: "",
             style: {},
@@ -101,6 +103,8 @@ function practiceController($scope, $log) {
             question: 'True or False: Bridget is doing work.',
             hint1: "She's not",
             hintBool: true,
+            count: 0,
+            attemptStatus: "",
             answer: 'False',
             result: "",
             style: {},
@@ -113,6 +117,7 @@ function practiceController($scope, $log) {
             hint1: '24601',
             hintBool: true,
             count: 0,
+            attemptStatus: "",
             answer: 'Jean Valjean',
             result: "",
             style: {},
