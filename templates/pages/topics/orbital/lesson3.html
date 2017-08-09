@@ -3,20 +3,20 @@
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Exercises</h1>
     <div ng-repeat="info in exercises">
-        <div ng-style="checkAnswer(info)">
-            <div class="practice-content">
+
+        <div class="exersise-left-side next-to" ng-style="checkAnswer(info)" style="padding-bottom: 25px;">
                 <p>{{info.question}}</p>
-                <form>
-                    <input type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
-                    <input type="submit" value="Check" ng-click="checkAnswer(info); numberOfSubmits(info)">
+                <form style="padding: 10px 25px;">
+                    <input ng-disabled="disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
+                    <input ng-disabled="disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
                 </form>
                 <p>{{info.result}}</p>
-            </div>
-            <p ng-show="info.countBool">{{info.attemptStatus}}</p>
-            <div class="hint-container">
-              <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
-              <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>
-            </div>
+                <p>{{info.attemptStatus}}</p>
+        </div>
+        <div class="exercise-right-side next-to">
+            
+            <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>
+            <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
         </div>
         <hr>
     </div>
