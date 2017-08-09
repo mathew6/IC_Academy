@@ -56,7 +56,7 @@ function practiceController($scope, $log) {
                         $scope.disable = true;
                     }
                 }
-            }
+        }
 
         // Make your questions free response questions here!
         $scope.exercises = [
