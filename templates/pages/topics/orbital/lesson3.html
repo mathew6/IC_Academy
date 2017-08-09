@@ -19,7 +19,12 @@
         </div>
         <hr>
     </div>
-    <div><button class="green-expanding-button">Submit</button></div>
+    <div ng-show="showSubmitButton">
+        <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
+    </div>
+    <div ng-show="showScore">
+        <p>{{numCorrect + " out of " + exercises.length}}</p>
+    </div>
 </div>
 <!--Multiple Choice Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">

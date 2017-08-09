@@ -1,5 +1,9 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
+        $scope.numCorrect = 0;
+        $scope.showSubmitButton = false;
+        $scope.showScore = false;
+
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
@@ -55,6 +59,28 @@ function practiceController($scope, $log) {
                                                 " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
+                $scope.checkAllAnswered();
+        }
+
+        $scope.checkAllAnswered = function() {
+            var allAnswered = true;
+            for (i in $scope.exercises) {
+                if (!document.getElementById($scope.exercises[i].answerId).value) {
+                    allAnswered = false;
+                }
+            }
+            $scope.showSubmitButton = allAnswered;
+        }
+
+        $scope.submitQuiz = function() {
+            var correctCount = 0;
+            for (i in $scope.exercises) {
+                if (answerIsRight($scope.exercises[i])) {
+                    correctCount++;
+                }
+            }
+            $scope.numCorrect = correctCount;
+            $scope.showScore = true;
         }
 
         // Make your questions free response questions here!
