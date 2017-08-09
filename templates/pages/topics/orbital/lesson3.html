@@ -3,16 +3,16 @@
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Exercises</h1>
     <div ng-repeat="info in exercises">
-        <div ng-style="checkAnswer(info.problem)">
+        <div ng-style="checkAnswer(info)">
             <div class="practice-content">
                 <p>{{info.question}}</p>
                 <form>
-                    <input type="text" ng-attr-id="{{info.problem}}" name="answer" autocomplete="off" style="margin-left:15px">
-                    <input type="submit" value="Check" ng-click="checkAnswer(info.problem); numberOfSubmits(info)">
+                    <input type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
+                    <input type="submit" value="Check" ng-click="checkAnswer(info); numberOfSubmits(info)">
                 </form>
                 <p>{{info.result}}</p>
             </div>
-            <p ng-show="countBool">{{attemptStatus}}</p>
+            <p ng-show="info.countBool">{{info.attemptStatus}}</p>
             <div class="hint-container">
               <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
               <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>

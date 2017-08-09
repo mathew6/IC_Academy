@@ -6,9 +6,3 @@ angular.module('firstApplication').controller('sliderController', sliderControll
         $scope.redLine = 575;
         $scope.blueLine = 150;
     };
-
-    function sliderPracticeProblem() {
-        if ($scope.test = 200) {
-            
-        }
-    }
