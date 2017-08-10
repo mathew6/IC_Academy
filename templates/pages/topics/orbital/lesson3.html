@@ -18,9 +18,10 @@
                     <div ng-if="info.hintBool">
                         <button class="hint-link" ng-click="hint(info)">Get Hint</button>
                     </div>
-                    <button ng-if="info.problem != 1" class="hint-link" ng-click="selectPreviousProblem(info)">Previous</button>
-                    <button ng-if="info.problem != 5" class="hint-link" ng-click="selectNextProblem(info)">Next</button>
-                 
+                    <div>
+                        <button ng-if="info.problem != 1" class="previous round" ng-click="selectPreviousProblem(info)">&#8249; back</button>
+                        <button ng-if="info.problem != 5" class="next round" ng-click="selectNextProblem(info)">next &#8250;</button>
+                    </div>
                 </div>
             </div>
             <div class="exercise-right-side next-to">
@@ -29,8 +30,8 @@
                 </p>
             </div>
         </div>
-        <hr>
     </div>
+    <hr>
     <div ng-if="showSubmitButton">
         <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
     </div>
