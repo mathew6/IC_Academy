@@ -141,10 +141,6 @@ table, th {
     color: white;
 }
 
-.hint-container, .practice-container {
-    display:inline; 
-}
-
 .hint-link {
     padding: 5px;
     margin: 10px;
@@ -171,8 +167,39 @@ table, th {
     margin-left: 320px;
 }
 
+.exersise-left-side {
+    margin: 10px;
+    width: 49%;
+}
+
+.exersise form{
+    margin: 10px 20px;
+}
+
+.exercise-right-side {
+    float: right;
+    margin: 10px;
+    width: 40%;
+    border: 2px dashed black;
+}
+
+.hint-container {
+    margin: auto;
+}
+
 .hint1 {
     border: 2px solid blueviolet;
-    padding: 10px;
     background-color: white;
+}
+
+.check-button {
+    background-color: none;
+    padding: 10px;
+    font-size: 14pt;
+    border: 1px solid none;
+    border-radius: 20%;
+}
+
+input[type=text] {
+    padding: 8px 10px;
 }
