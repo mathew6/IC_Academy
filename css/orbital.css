@@ -141,22 +141,18 @@ table, th {
     color: white;
 }
 
-.hint-container, .practice-container {
-    display:inline; 
-}
-
 .hint-link {
     padding: 5px;
     margin: 10px;
     display: inline-block;
-    background-color: blueviolet;
+    background-color: black;
     text-align: center;
     text-decoration: none;
     border-radius: 10px;
-    color: black;
+    color: white;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 8pt;
-    border-color: blueviolet;
+    border-color: none;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -171,8 +167,57 @@ table, th {
     margin-left: 320px;
 }
 
+.exersise-left-side {
+    margin: 10px;
+    width: 49%;
+}
+
+.exersise form{
+    margin: 10px 20px;
+}
+
+.exercise-right-side {
+    float: right;
+    margin: 10px;
+    width: 40%;
+    border: 2px dashed black;
+}
+
+.hint-container {
+    margin: auto;
+}
+
 .hint1 {
     border: 2px solid blueviolet;
-    padding: 10px;
     background-color: white;
+}
+
+.check-button {
+    padding: 5px 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: navajowhite;
+    border-radius: 10px;
+    color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12pt;
+    border-color: #94A3E3;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.check-button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+input[type=text] {
+   margin: 10px 20px;;
+   padding: 5px 10px;
+   width: 70%;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
 }

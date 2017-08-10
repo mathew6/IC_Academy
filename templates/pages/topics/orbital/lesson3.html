@@ -2,20 +2,27 @@
 <!--Free Response Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Exercises</h1>
+    <hr>
     <div ng-repeat="info in exercises">
-
-        <div class="exersise-left-side next-to" ng-style="checkAnswer(info)" style="padding-bottom: 25px;">
-                <p>{{info.question}}</p>
-                <form style="padding: 10px 25px;">
-                    <input ng-disabled="info.disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off" style="margin-left:15px">
-                    <input ng-disabled="info.disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
+        <div class="exercise" ng-style="checkAnswer(info)">
+            <div class="exersise-left-side next-to">
+                <p class="exercise-question">{{info.question}}</p>
+                <form>
+                    <input ng-disabled="disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off">
+                    <input class="check-button" ng-disabled="disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
                 </form>
                 <p>{{info.result}}</p>
                 <p>{{info.attemptStatus}}</p>
-        </div>
-        <div class="exercise-right-side next-to">
-            <div class="next-to" id="{{info.id}}"></div>
-            <div ng-show="info.hintBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
+                <div class="hint-container">
+                    <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>
+                    <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
+                </div>
+            </div>
+            <div class="exercise-right-side next-to">
+                <p>This is just a place holder with 
+                    <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">really important quiz content</a>.
+                </p>
+            </div>
         </div>
         <hr>
     </div>
@@ -29,6 +36,7 @@
 <!--Multiple Choice Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Sample Quiz</h1>
+    <hr>
     <form ng-submit="submit()">
         <div ng-repeat="q in multipleChoiceQuestions">
             <p>Selected Value: <span class="radioValue">{{ selected }}</span> </p>
@@ -43,6 +51,7 @@
 <!--Interactive Quiz-->
 <div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
     <h1>Interactive problem</h1>
+    <hr>
     <div bind-Dee-Three-Stuff="myData">
         <div id="test"></div>
     </div>
