@@ -14,8 +14,8 @@
                 <p>{{info.result}}</p>
                 <p>{{info.attemptStatus}}</p>
                 <div class="hint-container">
-                    <div ng-show="info.hintBool" class="next-to" id="{{info.id}}"></div>
-                    <div ng-if="info.hideBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
+                    <div ng-hide="info.hintBool" class="next-to" id="{{info.id}}"></div>
+                    <div ng-show="info.hintBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
                 </div>
             </div>
             <div class="exercise-right-side next-to">
