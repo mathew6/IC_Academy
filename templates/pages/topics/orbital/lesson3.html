@@ -2,8 +2,11 @@
 <!--Free Response Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Exercises</h1>
-    <hr>
     <div ng-repeat="info in exercises">
+        <div ng-show="info.selected">
+            <h2>{{"Problem " + info.problem}}</h2>
+            <hr>
+        </div>
         <div ng-show="info.selected" class="exercise" ng-style="checkAnswer(info)">
             <div class="exersise-left-side next-to">
                 <p class="exercise-question">{{info.question}}</p>
