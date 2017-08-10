@@ -147,22 +147,33 @@ function practiceController($scope, $log) {
             disable: false},
     ];
 
+    $scope.checkMCAnswer = function(multObj) {
+        document.getElementById(multObj.multChoiceId)
+        if (multObj.answers[0].value && multObj.answers[0].value) {
+            $log.info('selected correct answer')
+        }
+        else {
+            $log.info('no')
+        }
+    }
+
     $scope.multipleChoiceQuestions = [
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+        {question: "What is love?",
+        answers:
+            [{answerChoice: "baby don't hurt me", correct: true, value: 1},
+            {answerChoice: "don't hurt me", correct: false, value: 2},
+            {answerChoice: "no more", correct: false, value: 3}],
+        multChoiceId: "q1",
+        multChoiceBool: false},
 
-
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
-
-
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
-
-
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],  
-        ];
+        {question: "Does this still work?",
+        answers: 
+            [{answerChoice: "YES!", correct: false, value: 1},
+            {answerChoice: "Maybe?", correct: true, value: 2},
+            {answerChoice: "Nope, not even close.", correct: false, value: 3}],
+        multChoiceId: "q2",
+        multChoiceBool: false},
+    ];  
 };
 
 

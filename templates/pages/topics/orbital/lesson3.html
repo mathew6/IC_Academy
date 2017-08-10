@@ -37,15 +37,16 @@
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Sample Quiz</h1>
     <hr>
-    <form ng-submit="submit()">
-        <div ng-repeat="q in multipleChoiceQuestions">
-            <p>Selected Value: <span class="radioValue">{{ selected }}</span> </p>
-            <p>{{q.question}}</p>
-            <md-radio-group ng-model="selected">
-                <md-radio-button ng-repeat="d in q" ng-value="d.value" aria-label="{{d.label}}">{{d.label}}</md-radio-button>
+    <form>
+        <div ng-repeat="obj in multipleChoiceQuestions">
+            <p>{{obj.question}}</p>
+            <md-radio-group ng-model="multChoice">
+                <md-radio-button ng-repeat="choice in obj.answers" ng-value="choice.value">{{choice.answerChoice}}</md-radio-button>
             </md-radio-group>
+            <button ng-click="checkMCAnswer(obj)">Check</button>
             <hr>
         </div>
+        
     </form>   
 </div>
 <!--Interactive Quiz-->
