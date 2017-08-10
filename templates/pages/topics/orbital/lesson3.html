@@ -29,15 +29,15 @@
                     <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">really important quiz content</a>.
                 </p>
             </div>
+            <div ng-if="info.problem == 5">
+                <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
+            </div>
+            <div ng-if="showScore">
+                <p>{{numCorrect + " out of " + exercises.length}}</p>
+            </div>
         </div>
     </div>
     <hr>
-    <div ng-if="showSubmitButton">
-        <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
-    </div>
-    <div ng-if="showScore">
-        <p>{{numCorrect + " out of " + exercises.length}}</p>
-    </div>
 </div>
 <!--Multiple Choice Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">

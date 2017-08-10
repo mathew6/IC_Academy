@@ -1,7 +1,6 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
         $scope.numCorrect = 0;
-        $scope.showSubmitButton = false;
         $scope.showScore = false;
 
         $scope.hint = function(exerObj) {
@@ -85,7 +84,6 @@ function practiceController($scope, $log) {
                     allAnswered = false;
                 }
             }
-            $scope.showSubmitButton = allAnswered;
         }
 
         $scope.submitQuiz = function() {
