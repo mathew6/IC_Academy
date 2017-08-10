@@ -2,6 +2,7 @@ angular.module('firstApplication').controller('practiceController', practiceCont
 function practiceController($scope, $log) {
         $scope.numCorrect = 0;
         $scope.showScore = false;
+        $scope.allAnswered = false;
 
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
@@ -36,6 +37,7 @@ function practiceController($scope, $log) {
                 // select previous question
                 $scope.exercises[index - 1].selected = true;
             }
+            checkAllAnswered();
         }
 
         $scope.selectNextProblem = function(exerObj) {
@@ -46,6 +48,7 @@ function practiceController($scope, $log) {
                 // select next question
                 $scope.exercises[index + 1].selected = true;
             }
+            checkAllAnswered();
         }
 
         var answerIsRight = function(exerObj) {
@@ -74,16 +77,17 @@ function practiceController($scope, $log) {
                                                 " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
-                $scope.checkAllAnswered();
         }
 
-        $scope.checkAllAnswered = function() {
+        // check if all questions have been answered
+        var checkAllAnswered = function() {
             var allAnswered = true;
             for (i in $scope.exercises) {
                 if (!document.getElementById($scope.exercises[i].answerId).value) {
                     allAnswered = false;
                 }
             }
+            $scope.allAnswered = allAnswered;
         }
 
         $scope.submitQuiz = function() {
