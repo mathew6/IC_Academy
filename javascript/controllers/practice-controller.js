@@ -18,7 +18,6 @@ function practiceController($scope, $log) {
                     "background-color" : "lightgreen",
                     "border" : "2px solid green"
                 }
-                
             }
             else if (document.getElementById(exerObj.answerId).value) {
                 exerObj.result = "That is not correct";
@@ -28,7 +27,27 @@ function practiceController($scope, $log) {
                 }
             }
             return  exerObj.style;
-        };
+        }
+
+        $scope.selectPreviousProblem = function(exerObj) {
+            exerObj.selected = false; // de-select current question
+            if (exerObj.problem - 1 > 0) {
+                // index of the exerObj in the quiz array
+                var index = exerObj.problem - 1; 
+                // select previous question
+                $scope.exercises[index - 1].selected = true;
+            }
+        }
+
+        $scope.selectNextProblem = function(exerObj) {
+            exerObj.selected = false; // de-select current question
+            if (exerObj.problem + 1 <= $scope.exercises.length) {
+                // index of the exerObj in the quiz array
+                var index = exerObj.problem - 1;
+                // select next question
+                $scope.exercises[index + 1].selected = true;
+            }
+        }
 
         var answerIsRight = function(exerObj) {
             return document.getElementById(exerObj.answerId).value === exerObj.answer;
@@ -94,7 +113,8 @@ function practiceController($scope, $log) {
                 answer: '40',
                 result: "",
                 style: {},
-                disable: false
+                disable: false,
+                selected: true
             },
 
             {
@@ -109,7 +129,8 @@ function practiceController($scope, $log) {
                 answer: '3',
                 result: "",
                 style: {},
-                disable: false
+                disable: false,
+                selected: false
             },
 
             {
@@ -124,7 +145,8 @@ function practiceController($scope, $log) {
                 answer: 'His sass level is over 9000',
                 result: "",
                 style: {},
-                disable: false
+                disable: false,
+                selected: false
             },
 
             {
@@ -139,7 +161,8 @@ function practiceController($scope, $log) {
                 answer: 'False',
                 result: "",
                 style: {},
-                disable: false
+                disable: false,
+                selected: false
             },
 
             {
@@ -154,7 +177,8 @@ function practiceController($scope, $log) {
                 answer: 'Jean Valjean',
                 result: "",
                 style: {},
-                disable: false
+                disable: false,
+                selected: false
             },
     ];
 

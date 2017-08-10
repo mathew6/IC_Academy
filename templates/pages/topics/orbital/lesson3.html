@@ -4,7 +4,7 @@
     <h1>Exercises</h1>
     <hr>
     <div ng-repeat="info in exercises">
-        <div class="exercise" ng-style="checkAnswer(info)">
+        <div ng-show="info.selected" class="exercise" ng-style="checkAnswer(info)">
             <div class="exersise-left-side next-to">
                 <p class="exercise-question">{{info.question}}</p>
                 <form>
@@ -15,7 +15,12 @@
                 <p>{{info.attemptStatus}}</p>
                 <div class="hint-container">
                     <div ng-hide="info.hintBool" class="next-to" id="{{info.id}}"></div>
-                    <div ng-if="info.hintBool"><button class="hint-link" ng-click="hint(info)">Get Hint</button></div>
+                    <div ng-if="info.hintBool">
+                        <button class="hint-link" ng-click="hint(info)">Get Hint</button>
+                    </div>
+                    <button ng-if="info.problem != 1" class="hint-link" ng-click="selectPreviousProblem(info)">Previous</button>
+                    <button ng-if="info.problem != 5" class="hint-link" ng-click="selectNextProblem(info)">Next</button>
+                 
                 </div>
             </div>
             <div class="exercise-right-side next-to">
