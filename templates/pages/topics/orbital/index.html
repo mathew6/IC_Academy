@@ -1,17 +1,16 @@
 <div id="orbital-page">
     <link rel="stylesheet" href="css/orbital.css">
 
-    <div id="orbits-intro" class="next-to">
-        <!--<div class='side-bar'>-->
+    <div id="orbits-intro" class="next-to" ng-controller="lessonController as lessonCtrl">
             <ul class="side-bar next-to">
-                <a ui-sref="orbital.Lesson1"><button class="side-bar-list"><li>Lesson 1: Orbital Geometry</li></button></a>
-                <a ui-sref="orbital.Lesson2"><button class="side-bar-list"><li>Lesson 2: Keplar's Laws</li></button></a>
-                <a ui-sref="orbital.Lesson3"><button class="side-bar-list"><li>Practice</li></button></a>
-                <a ui-sref="orbital.Lesson4"><button class="side-bar-list"><li>Lesson 3: Low Earth Orbits</li></button></a>
-                <a ui-sref="orbital.Lesson5"><button class="side-bar-list"><li>Lesson 4: Highly Eliptical Orbits</li></button></a>
-                <a ui-sref="orbital.Lesson6"><button class="side-bar-list"><li>Lesson 5: Geo-Stationary Orbits</li></button></a>
+                <div ng-repeat="lesson in lessons">
+                    <a ui-sref="{{lesson.uisref}}">
+                        <button id="{{lesson.id}}" class="side-bar-list" ng-click="highlightTab(lesson.id)">
+                            <li>{{lesson.name}}</li>
+                        </button>
+                    </a>
+                </div>
             </ul>
-        <!--</div>-->
 
             <!--<img id="cover-image" onclick="this.style.display='none';" src="https://scijinks.gov/review/orbit/geo.gif"></img>-->
             <iframe class="next-to" src="https://www.youtube.com/embed/tJiAkBxuqfs"
