@@ -1,22 +1,21 @@
 <h1 class="lesson-header">Orbital Geometry</h1>
+    <svg width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
+        <path id="orbit" d="M 100,225 a 400,200 0 1,0 800,0 a 400,200 0 1,0 -800,0" fill = "none" stroke = "white" stroke-width = "3" />
 
-<svg width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
-    <path id="orbit" d="M 100,225 a 400,200 0 1,0 800,0 a 400,200 0 1,0 -800,0" fill = "none" stroke = "white" stroke-width = "3" />
+        <!--<circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
+            <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
+                <mpath xlink:href="#orbit"/>
+            </animateMotion>
+        </circle>-->
+        <image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="250" y="175" height="100" width="100"/>  
 
-    <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
-        <animateMotion begin="0s" dur="12s" repeatCount="indefinite" >
-            <mpath xlink:href="#orbit"/>
-        </animateMotion>
-    </circle>
-    <image xlink:href="http://www.clipartlord.com/wp-content/uploads/2016/09/earth33.png" x="250" y="175" height="100" width="100"/>  
-
-    <circle cx="500" cy="225" r="5" fill="orange" stroke="black" />
-    <text x="475" y="215" fill="white">Origin</text>
-    <line x1="900" y1="225" x2="500" y2="225" style="stroke:rgb(255,0,0);stroke-width:2"/>
-    <text x="650" y="240" fill="white">Semi-Major Axis</text>
-    <line x1="500" y1="225" x2="500" y2="425" style="stroke:royalblue;stroke-width:2"/>
-    <text x="260" y="-505" fill="white" transform="rotate(90)">Semi-Minor Axis</text>
-</svg>
+        <circle cx="500" cy="225" r="5" fill="orange" stroke="black" />
+        <text x="475" y="215" fill="white">Origin</text>
+        <line x1="900" y1="225" x2="500" y2="225" style="stroke:rgb(255,0,0);stroke-width:2"/>
+        <text x="650" y="240" fill="white">Semi-Major Axis</text>
+        <line x1="500" y1="225" x2="500" y2="425" style="stroke:royalblue;stroke-width:2"/>
+        <text x="260" y="-505" fill="white" transform="rotate(90)">Semi-Minor Axis</text>
+    </svg>
 
 <div class="orbit-text">
 
@@ -51,11 +50,11 @@
             <td>The <b>shortest</b> possible radius of an elliptical orbit</td>
             <td><svg width="100" height="50"><line x1="25" y1="25" x2="75" y2="25" style="stroke:rgb(0,0,255);stroke-width:2"/></svg></td>
         </tr>
-        <tr>
+        <!--<tr>
             <td>Satellite</td>
             <td>The object orbiting Earth in an elliptical path.</td>
             <td><svg width="100" height="50"><circle cx="50" cy="25" r="10" fill="lime" stroke="black"/></svg></td>
-        </tr>
+        </tr>-->
     </table>
     <p> As demonstrated above, the satellite (green moving circle) is traveling around the Earth 
         which is always one of the foci invloved in elliptical orbits. The other focus (also referred to as the vacant focus) is another point in space 
@@ -64,12 +63,40 @@
         where as the Semi-Minor axis is the shortest possible radius from the center. A circle is a special type of an ellipse where the Semi-Major and Semi-Minor axis are equal
         to eachother. In fact, the infinite amount of radii found within a circle are equal to eachother. Perfect symmetry :) !
     </p>
+
+        <div ng-controller="sliderController as slider" ng-cloak>
+       
+            <md-content style="margin: 16px; padding:20px; background-color:#94A3E3">
+
+                <md-slider-container>
+                <md-slider class="md-warn" flex min="150" max="350" ng-model="sMaj" aria-label="red" id="red-slider">
+                </md-slider>
+                <md-input-container>
+                Semi-Major Axis = <input style="background-color:white;" flex min="150" max="350" type="number" ng-model="sMaj" aria-label="Semi-Major Axis" aria-controls="red-slider">
+                </md-input-container>
+                </md-slider-container>
+
+                <md-slider-container>
+                <md-slider class="md-warn" flex min="50" max="150" ng-model="sMin" aria-label="red" id="red-slider">
+                </md-slider>
+                <md-input-container>
+                Semi-Minor Axis = <input style="background-color:white;" flex min="50" max="150" type="number" ng-model="sMin" aria-label="Semi-Major Axis" aria-controls="red-slider">
+                </md-input-container>
+                </md-slider-container>
+            </md-content>   
+
+            <svg height="375" width="100%">
+                <ellipse cx="575" cy="150" rx="{{sMaj}}" ry="{{sMin}}" style="fill:none;stroke:black;stroke-width:3"/>
+                <line x1="{{redLine + sMaj}}" y1="150" x2="575" y2="150" style="stroke:rgb(255,0,0);stroke-width:2" />
+                <line x1="575" y1="{{blueLine + sMin}}" x2="575" y2="150" style="stroke:rgb(0,0,255);stroke-width:2" />
+                <circle cx="575" cy="150" r="5" fill="orange" stroke="black"/>
+            </svg>
+        </div>
 </div>
 
 <!--Eccentricity -->
 
 <h1 class="lesson-header">Eccentricity</h1>
-
 <svg class="orbit-mod" width="1000px" height="450" style="padding-left:250px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">>
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
 
@@ -84,7 +111,7 @@
     <line x1="100" y1="225" x2="500" y2="225" style="stroke:rgb(255,0,0);stroke-width:2"/>
     <line x1="500" y1="225" x2="500" y2="425" style="stroke:royalblue;stroke-width:2"/>
     <line x1="300" y1="225" x2="500" y2="425" style="stroke:purple;stroke-width:2"/>
-    <text x="450" y="-60" fill="white" transform="rotate(45)">Eccentricity</text>
+    <!--<text x="450" y="-60" fill="white" transform="rotate(45)">Eccentricity</text>-->
 </svg>
 
 <div class="orbit-text">
@@ -134,7 +161,26 @@
             in an ellipse is always less than the length of the ellipse (aka the major axis), its eccentricity 
             will always be between 0 and 1. A cicrcle is a special ellipse as it has an eccentricity of 0 which makes sense 
             because the foci are on top of each other directly in the center which makes  
-    </p>    
+    </p>
+    <div ng-controller="sliderController as slider" ng-cloak>
+       
+            <md-content style="margin: 16px; padding:20px; background-color:#94A3E3">
+
+                <md-slider-container>
+                <md-slider class="md-warn" flex min="0" max=".9" step=".01" ng-model="eccen" ng-change="updateEccentricity()" aria-label="eccentricity" id="eccen-slider">
+                </md-slider>
+                <md-input-container>
+                Eccentricity = <input style="background-color:white;" flex min="0" max=".9" step=".01" type="number" ng-model="eccen" ng-change="updateEccentricity()" aria-label="Eccentricity" aria-controls="red-slider">
+                </md-input-container>
+                </md-slider-container>
+
+            </md-content>   
+
+            <svg height="375" width="100%">
+                <ellipse cx="575" cy="150" rx="{{a}}" ry="{{b}}" style="fill:none;stroke:black;stroke-width:3"/>
+                
+            </svg>
+        </div>    
 </div>
 
 <!--Apogee, Perogee -->
@@ -143,7 +189,7 @@
     <path id="orbit" d="M100,225a400,200 0 1,0 800,0a400,200 0 1,0 -800,00" fill = "none" stroke = "white" stroke-width = "3" />
 
     <circle r = "20" fill = "lime" stroke = "black" stroke-width = "3">
-        <animateMotion begin="0s" dur="1s" repeatCount="indefinite" >
+        <animateMotion begin="0s" dur="5s" repeatCount="indefinite" >
             <mpath xlink:href="#orbit"/>
         </animateMotion>
     </circle>
@@ -195,11 +241,12 @@
     </p>
 </div>
 
+<!--Inclination-->
 <h1 class="lesson-header">Inclination</h1>
 <img class="lesson-image" src="https://earthobservatory.nasa.gov/Features/OrbitsCatalog/images/orbital_inclination.png">
 <div class="orbit-text">
     <h1>Inclination</h1>
-    <p>This is where information on inclination will go (and hopefully some sort of <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">interactive diagram</a>.</p>
+    <p>This is where information on inclination will go (and hopefully some sort of <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">interactive diagram</a>).</p>
     <ol>
         <li>I'm</li>
         <li>so</li>

@@ -1,9 +1,11 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
+        //set default values for some variables
         $scope.numCorrect = 0;
         $scope.showScore = false;
         $scope.allAnswered = false;
 
+        //displays hint
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
@@ -11,6 +13,7 @@ function practiceController($scope, $log) {
             }
         };
 
+        //styles exercise div based off status of answer
         $scope.styleExercise = function (exerObj) {
             if (answerIsRight(exerObj)) {
                 exerObj.style = {
@@ -49,12 +52,9 @@ function practiceController($scope, $log) {
             checkAllAnswered();
         }
 
+        //boolean returns to see if user input matches the questions correct answer
         var answerIsRight = function(exerObj) {
             return document.getElementById(exerObj.answerId).value === exerObj.answer;
-        }
-
-        $scope.test = function() {
-            return true;
         }
         
         $scope.checkAnswer = function(exerObj) {
@@ -90,6 +90,7 @@ function practiceController($scope, $log) {
             $scope.allAnswered = allAnswered;
         }
 
+        //displays quiz results after button is hit
         $scope.submitQuiz = function() {
             var correctCount = 0;
             for (i in $scope.exercises) {
@@ -184,22 +185,24 @@ function practiceController($scope, $log) {
             },
     ];
 
-    $scope.multipleChoiceQuestions = [
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //use below array of objects for multiple choice section
+
+    // $scope.multipleChoiceQuestions = [
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],  
-        ];
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],  
+    //     ];
 };
 
 

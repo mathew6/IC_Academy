@@ -34,11 +34,11 @@
         <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
     </div>
     <div ng-if="showScore">
-        <p>{{"Total score = " + numCorrect + " out of " + exercises.length}}</p>
+        <p>{{"Total score: " + numCorrect + " out of " + exercises.length}}</p>
     </div>
 </div>
 <!--Multiple Choice Quiz-->
-<div class="orbit-text" ng-controller="practiceController as practice">
+<!--<div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Sample Quiz</h1>
     <hr>
     <form ng-submit="submit()">
@@ -51,15 +51,15 @@
             <hr>
         </div>
     </form>   
-</div>
+</div>-->
 <!--Interactive Quiz-->
-<div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
+<!--<div class="interactive-problem orbit-text" ng-controller="practiceController as practice">
     <h1>Interactive problem</h1>
     <hr>
     <div bind-Dee-Three-Stuff="myData">
         <div id="test"></div>
     </div>
-</div>
+</div>-->
 <!--Next and Back button-->
 <div id="container">
     <form class="lesson-nav-buttons" action="#!/topics/orbital/lesson2">
