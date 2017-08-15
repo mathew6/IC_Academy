@@ -2,25 +2,23 @@
 <!--Free Response Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">
     <h1>Exercises</h1>
-    <hr>
     <div ng-repeat="info in exercises">
-        <div ng-show="info.selected" class="exercise" ng-style="checkAnswer(info)">
+        <div ng-show="info.selected" class="exercise" ng-style="styleExercise(info)">
             <div class="exersise-left-side next-to">
                 <p class="exercise-question">{{info.question}}</p>
                 <form>
-                    <input ng-disabled="disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off">
-                    <input class="check-button" ng-disabled="disable" type="submit" value="Check" ng-click="checkAnswer(info); numberOfAnswerSubmits(info)">
+                    <input ng-disabled="info.disable" type="text" id="{{info.answerId}}" name="answer" autocomplete="off">
+                    <input class="check-button" ng-disabled="info.disable" type="submit" value="Check" ng-click="checkAnswer(info)">
                 </form>
-                <p>{{info.result}}</p>
                 <p>{{info.attemptStatus}}</p>
+                <div>
+                    <button ng-if="info.problem != 1" class="previous round" ng-click="selectPreviousProblem(info)">&#8249; back</button>
+                    <button ng-if="info.problem != exercises.length" class="next round" ng-click="selectNextProblem(info)">next &#8250;</button>
+                </div>
                 <div class="hint-container">
                     <div ng-hide="info.hintBool" class="next-to" id="{{info.id}}"></div>
                     <div ng-if="info.hintBool">
                         <button class="hint-link" ng-click="hint(info)">Get Hint</button>
-                    </div>
-                    <div>
-                        <button ng-if="info.problem != 1" class="previous round" ng-click="selectPreviousProblem(info)">&#8249; back</button>
-                        <button ng-if="info.problem != 5" class="next round" ng-click="selectNextProblem(info)">next &#8250;</button>
                     </div>
                 </div>
             </div>
@@ -29,15 +27,15 @@
                     <a href="https://www.youtube.com/watch?v=8ij8c8_lvrs">really important quiz content</a>.
                 </p>
             </div>
-            <div ng-if="info.problem == exercises.length || allAnswered">
-                <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
-            </div>
-            <div ng-if="showScore">
-                <p>{{numCorrect + " out of " + exercises.length}}</p>
-            </div>
         </div>
     </div>
-    <hr>
+     <div ng-if="allAnswered">
+         <hr>
+        <button class="green-expanding-button" ng-click="submitQuiz()">Submit</button>
+    </div>
+    <div ng-if="showScore">
+        <p>{{"Total score = " + numCorrect + " out of " + exercises.length}}</p>
+    </div>
 </div>
 <!--Multiple Choice Quiz-->
 <div class="orbit-text" ng-controller="practiceController as practice">

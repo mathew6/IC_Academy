@@ -11,16 +11,14 @@ function practiceController($scope, $log) {
             }
         };
 
-        $scope.checkAnswer = function (exerObj) {
+        $scope.styleExercise = function (exerObj) {
             if (answerIsRight(exerObj)) {
-                exerObj.result = "That is correct!";
                 exerObj.style = {
                     "background-color" : "lightgreen",
                     "border" : "2px solid green"
                 }
             }
             else if (document.getElementById(exerObj.answerId).value) {
-                exerObj.result = "That is not correct";
                 exerObj.style = {
                     "background-color" : "pink",
                     "border" : "2px solid red"
@@ -59,10 +57,11 @@ function practiceController($scope, $log) {
             return true;
         }
         
-        $scope.numberOfAnswerSubmits = function(exerObj) {
+        $scope.checkAnswer = function(exerObj) {
                 // check if the answer is correct
                 if (answerIsRight(exerObj)) {
                     exerObj.attemptStatus = "";
+                    exerObj.disable = true;
                 }
                 // check if there is a value in the input box
                 else if (document.getElementById(exerObj.answerId).value) {
@@ -73,10 +72,11 @@ function practiceController($scope, $log) {
                         exerObj.disable = true;
                     }
                     else if (exerObj.count >= 1) {
-                        exerObj.attemptStatus = "You have tried " + exerObj.count +
+                        exerObj.attemptStatus = "That is incorrect. You have tried " + exerObj.count +
                                                 " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
+                checkAllAnswered();
         }
 
         // check if all questions have been answered
