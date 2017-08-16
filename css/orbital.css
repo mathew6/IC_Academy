@@ -22,8 +22,8 @@ iframe {
 
 .side-bar{
     width: 400px;
-    padding: 20px;
-    background-color: black;
+    padding: 0px 20px;
+    background-color: none;
 }
 
 .side-bar-list{
