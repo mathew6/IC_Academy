@@ -235,23 +235,23 @@ p1 {
 
 
 #topics-page {
-    background-color: black;
+    background-image: url('http://www.planwallpaper.com/static/images/518079-background-hd.jpg');
     padding-bottom: 400px;
     background-repeat: no-repeat;
 }
 
 #search-bar {
-    background-color: black;
+    background-image: url('http://www.planwallpaper.com/static/images/518079-background-hd.jpg');
 }
 
 #listOfTopics {
     list-style-type: none;
     margin: 0px 550px;
     padding: 50px 50px;
-    border: 5px solid orangered;
+    border: 5px solid none;
     border-radius: 100%;
     overflow: hidden;
-    background-color: white;
+    background-color: none;
 }
 
 #listOfTopics li{

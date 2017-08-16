@@ -15,7 +15,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
                                 "Satellite" : "#!/topics/satellites", 
                                 "Kepler" : "#!/topics/kepler",
                                 "Trigonometry" : "#!/topics/trigonometry"
-                                };
+                                }; //add topic name and location to auto add it to topics page
            addTopicsToTab();
 
            // search for topic searched by user
@@ -45,7 +45,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
            }
            // load space topics
            function loadTopics() {
-              var allTopics = "Orbital Mechanics, Satellite, Kepler, Trigonometry";
+              var allTopics = "Orbital Mechanics, Satellite, Kepler, Trigonometry"; //add topic name here and in above object
               return allTopics.split(/, +/g).map( function (topic) {
                  return {
                     value: topic.toLowerCase(),
@@ -60,6 +60,7 @@ angular.module('firstApplication').controller('autoCompleteController', autoComp
                  return (topic.value.indexOf(lowercaseQuery) === 0);
               };
            }
+           //Adds topic to topic tab
            function addTopicsToTab()        {
                $log.info("addTopicsToTab was called");
                for (var key in self.topicLinkObj) {                 

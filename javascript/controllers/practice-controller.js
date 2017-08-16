@@ -1,9 +1,11 @@
 angular.module('firstApplication').controller('practiceController', practiceController);
 function practiceController($scope, $log) {
+        //set default values for some variables
         $scope.numCorrect = 0;
         $scope.showScore = false;
         $scope.allAnswered = false;
 
+        //displays hint
         $scope.hint = function(exerObj) {
             if (exerObj.hintBool) {
                 document.getElementById(exerObj.id).innerHTML = '<p class="hint1">' + exerObj.hint1 + '</p>';
@@ -11,16 +13,15 @@ function practiceController($scope, $log) {
             }
         };
 
-        $scope.checkAnswer = function (exerObj) {
+        //styles exercise div based off status of answer
+        $scope.styleExercise = function (exerObj) {
             if (answerIsRight(exerObj)) {
-                exerObj.result = "That is correct!";
                 exerObj.style = {
                     "background-color" : "lightgreen",
                     "border" : "2px solid green"
                 }
             }
             else if (document.getElementById(exerObj.answerId).value) {
-                exerObj.result = "That is not correct";
                 exerObj.style = {
                     "background-color" : "pink",
                     "border" : "2px solid red"
@@ -51,18 +52,16 @@ function practiceController($scope, $log) {
             checkAllAnswered();
         }
 
+        //boolean returns to see if user input matches the questions correct answer
         var answerIsRight = function(exerObj) {
             return document.getElementById(exerObj.answerId).value === exerObj.answer;
         }
-
-        $scope.test = function() {
-            return true;
-        }
         
-        $scope.numberOfAnswerSubmits = function(exerObj) {
+        $scope.checkAnswer = function(exerObj) {
                 // check if the answer is correct
                 if (answerIsRight(exerObj)) {
                     exerObj.attemptStatus = "";
+                    exerObj.disable = true;
                 }
                 // check if there is a value in the input box
                 else if (document.getElementById(exerObj.answerId).value) {
@@ -73,10 +72,11 @@ function practiceController($scope, $log) {
                         exerObj.disable = true;
                     }
                     else if (exerObj.count >= 1) {
-                        exerObj.attemptStatus = "You have tried " + exerObj.count +
+                        exerObj.attemptStatus = "That is incorrect. You have tried " + exerObj.count +
                                                 " times. You have " + attemptsLeft + " attempts left."; 
                     }
                 }
+                checkAllAnswered();
         }
 
         // check if all questions have been answered
@@ -90,6 +90,7 @@ function practiceController($scope, $log) {
             $scope.allAnswered = allAnswered;
         }
 
+        //displays quiz results after button is hit
         $scope.submitQuiz = function() {
             var correctCount = 0;
             for (i in $scope.exercises) {
@@ -184,22 +185,24 @@ function practiceController($scope, $log) {
             },
     ];
 
-    $scope.multipleChoiceQuestions = [
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //use below array of objects for multiple choice section
+
+    // $scope.multipleChoiceQuestions = [
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],
 
 
-            [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
-            {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],  
-        ];
+    //         [{value: 1,label: "Test"},{value: 2,label: "Test 2"},
+    //         {value: 3,label: "Test 3"},{value: 4,label: "Test 4"}],  
+    //     ];
 };
 
 
