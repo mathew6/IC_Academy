@@ -124,14 +124,8 @@ p1 {
 
 
 
-
-
-
-
-
-
 #home-page {
-    background-image: url('http://wallpapercave.com/wp/7NvodtH.jpg');
+    background-image: url('../images/home-page-background.jpg');
     padding-bottom: 710px;
 }
 
@@ -235,13 +229,13 @@ p1 {
 
 
 #topics-page {
-    background-image: url('http://www.planwallpaper.com/static/images/518079-background-hd.jpg');
+    background-image: url('../images/topics-page-background.jpg');
     padding-bottom: 400px;
     background-repeat: no-repeat;
 }
 
 #search-bar {
-    background-image: url('http://www.planwallpaper.com/static/images/518079-background-hd.jpg');
+    background-image: url('../images/topics-page-background.jpg');
 }
 
 #listOfTopics {
@@ -287,7 +281,7 @@ p1 {
 
 
 #about-page {
-    background-image: url('http://www.talonx.com/file/2013/09/polyagonal-web-design.jpg');
+    background-image: url('../images/about-page-background.jpg');
     padding-bottom: 630px;
     padding-top: 25px;
 }
